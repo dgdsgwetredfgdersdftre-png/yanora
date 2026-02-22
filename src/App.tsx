@@ -831,10 +831,10 @@ function App() {
             <div className="bg-white p-6" style={{borderColor: '#B9CBDC', border: '3px solid #B9CBDC'}}>
               {/* Before/After Images */}
               <div className="grid grid-cols-2 gap-3 mb-6">
-                <div className="aspect-[3/4] rounded-2xl overflow-hidden flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
+                <div className="aspect-[3/4] overflow-hidden flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
                   <span className="text-gray-600 text-xs">手术前</span>
                 </div>
-                <div className="aspect-[3/4] rounded-2xl overflow-hidden flex items-center justify-center" style={{backgroundColor: '#A0A7B5'}}>
+                <div className="aspect-[3/4] overflow-hidden flex items-center justify-center" style={{backgroundColor: '#A0A7B5'}}>
                   <span className="text-white text-xs">手术后</span>
                 </div>
               </div>
