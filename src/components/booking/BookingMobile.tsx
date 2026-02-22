@@ -108,19 +108,52 @@ function BookingMobile({
               )}
 
               <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label className="block text-xs font-normal mb-2 tracking-wide" style={{color: '#1F1F1F'}}>
+                      姓 <span style={{color: '#EF4444'}}>*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="lastName"
+                      value={formData.lastName || ''}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 bg-white border rounded-lg text-sm tracking-wide transition focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
+                      style={{borderColor: '#E5E7EB', color: '#1F1F1F'}}
+                      placeholder="姓"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-normal mb-2 tracking-wide" style={{color: '#1F1F1F'}}>
+                      名 <span style={{color: '#EF4444'}}>*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="firstName"
+                      value={formData.firstName || ''}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 bg-white border rounded-lg text-sm tracking-wide transition focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
+                      style={{borderColor: '#E5E7EB', color: '#1F1F1F'}}
+                      placeholder="名"
+                    />
+                  </div>
+                </div>
+
                 <div>
                   <label className="block text-xs font-normal mb-2 tracking-wide" style={{color: '#1F1F1F'}}>
-                    姓名 <span style={{color: '#EF4444'}}>*</span>
+                    邮箱 <span style={{color: '#EF4444'}}>*</span>
                   </label>
                   <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
+                    type="email"
+                    name="email"
+                    value={formData.email}
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 bg-white border rounded-lg text-sm tracking-wide transition focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
                     style={{borderColor: '#E5E7EB', color: '#1F1F1F'}}
-                    placeholder="请输入您的姓名"
+                    placeholder="请输入您的邮箱地址"
                   />
                 </div>
 
@@ -151,71 +184,6 @@ function BookingMobile({
                       placeholder="请输入您的电话号码"
                     />
                   </div>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-normal mb-2 tracking-wide" style={{color: '#1F1F1F'}}>
-                    邮箱 <span style={{color: '#EF4444'}}>*</span>
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-white border rounded-lg text-sm tracking-wide transition focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
-                    style={{borderColor: '#E5E7EB', color: '#1F1F1F'}}
-                    placeholder="请输入您的邮箱地址"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-normal mb-2 tracking-wide" style={{color: '#1F1F1F'}}>
-                    预约日期 <span style={{color: '#EF4444'}}>*</span>
-                  </label>
-                  <input
-                    type="date"
-                    name="preferred_date"
-                    value={formData.preferred_date}
-                    onChange={handleChange}
-                    required
-                    min={new Date().toISOString().split('T')[0]}
-                    className="w-full px-4 py-3 bg-white border rounded-lg text-sm tracking-wide transition focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
-                    style={{borderColor: '#E5E7EB', color: '#1F1F1F'}}
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-normal mb-2 tracking-wide" style={{color: '#1F1F1F'}}>
-                    服务类型 <span style={{color: '#EF4444'}}>*</span>
-                  </label>
-                  <select
-                    name="service_type"
-                    value={formData.service_type}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-white border rounded-lg text-sm tracking-wide transition focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
-                    style={{borderColor: '#E5E7EB', color: '#1F1F1F'}}
-                  >
-                    <option value="面部轮廓">面部轮廓</option>
-                    <option value="身体塑形">身体塑形</option>
-                    <option value="注射提升">注射提升</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-normal mb-2 tracking-wide" style={{color: '#1F1F1F'}}>
-                    留言
-                  </label>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows={4}
-                    className="w-full px-4 py-3 bg-white border rounded-lg text-sm tracking-wide transition focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent resize-none"
-                    style={{borderColor: '#E5E7EB', color: '#1F1F1F'}}
-                    placeholder="请告诉我们您的需求或问题"
-                  />
                 </div>
 
                 <div className="pt-4">

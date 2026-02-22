@@ -6,6 +6,8 @@ import BookingMobile from './booking/BookingMobile';
 
 export interface BookingFormData {
   name: string;
+  firstName?: string;
+  lastName?: string;
   email: string;
   phone: string;
   preferred_date: string;
@@ -23,6 +25,8 @@ function BookingPage() {
   const [error, setError] = useState('');
   const [formData, setFormData] = useState<BookingFormData>({
     name: '',
+    firstName: '',
+    lastName: '',
     email: '',
     phone: '',
     preferred_date: '',
@@ -38,8 +42,17 @@ function BookingPage() {
     try {
       const { data: { user } } = await supabase.auth.getUser();
 
+      const fullName = formData.firstName && formData.lastName
+        ? `${formData.lastName}${formData.firstName}`
+        : formData.name;
+
       const bookingData = {
-        ...formData,
+        name: fullName,
+        email: formData.email,
+        phone: formData.phone,
+        preferred_date: formData.preferred_date,
+        service_type: formData.service_type,
+        message: formData.message,
         user_id: user?.id || null,
         status: 'pending',
         payment_status: 'unpaid',
