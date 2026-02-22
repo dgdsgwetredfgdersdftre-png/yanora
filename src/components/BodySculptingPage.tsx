@@ -40,7 +40,7 @@ function BodySculptingPage() {
             科学塑形方案，打造理想身材曲线
           </p>
 
-          <div className="bg-white py-12 mb-16">
+          <div className="bg-white py-12 mb-16" style={{border: '2px solid red'}}>
             {/* Desktop view - 3 images side by side */}
             <div className="hidden md:flex items-end justify-center gap-0">
               <img
