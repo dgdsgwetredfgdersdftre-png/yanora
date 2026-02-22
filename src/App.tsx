@@ -281,7 +281,7 @@ function App() {
             </div>
 
             <a href="#cases" className="text-sm transition" style={{color: '#6B7280'}} onMouseEnter={(e) => e.currentTarget.style.color = '#1F1F1F'} onMouseLeave={(e) => e.currentTarget.style.color = '#6B7280'}>案例</a>
-            <a href="#faq" className="text-sm transition" style={{color: '#6B7280'}} onMouseEnter={(e) => e.currentTarget.style.color = '#1F1F1F'} onMouseLeave={(e) => e.currentTarget.style.color = '#6B7280'}>FAQ</a>
+            <button onClick={() => navigate('/faq')} className="text-sm transition" style={{color: '#6B7280'}} onMouseEnter={(e) => e.currentTarget.style.color = '#1F1F1F'} onMouseLeave={(e) => e.currentTarget.style.color = '#6B7280'}>FAQ</button>
           </div>
 
           <div className="hidden md:flex items-center gap-4">
@@ -450,15 +450,17 @@ function App() {
               案例
             </a>
 
-            <a
-              href="#faq"
-              onClick={() => setShowMobileMenu(false)}
-              className="block px-6 py-4 text-white text-sm transition-all border-b border-white border-opacity-10"
+            <button
+              onClick={() => {
+                navigate('/faq');
+                setShowMobileMenu(false);
+              }}
+              className="w-full text-left px-6 py-4 text-white text-sm transition-all border-b border-white border-opacity-10"
               onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)'}
               onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
             >
               FAQ
-            </a>
+            </button>
           </div>
 
           <div className="p-6 border-t border-white border-opacity-20">
