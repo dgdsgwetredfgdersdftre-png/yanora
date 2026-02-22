@@ -753,7 +753,7 @@ function App() {
           </p>
 
           <div className="border-4 p-4 md:p-24" style={{borderColor: '#B9CBDC'}}>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-16 mb-6 md:mb-16">
+            <div className="hidden md:grid md:grid-cols-3 gap-6 md:gap-16 mb-6 md:mb-16">
               {[
                 { ethnicity: '黑人', image: '/black_facial_features/1_(1).png' },
                 { ethnicity: '黄种人', image: '/east_asian_facial_features/1_(2).png' },
@@ -766,6 +766,23 @@ function App() {
                   <p className="text-sm font-normal tracking-wide" style={{color: '#1F1F1F'}}>{item.ethnicity}</p>
                 </div>
               ))}
+            </div>
+
+            <div className="md:hidden mb-6">
+              <div className="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
+                {[
+                  { ethnicity: '黑人', image: '/black_facial_features/1_(1).png' },
+                  { ethnicity: '黄种人', image: '/east_asian_facial_features/1_(2).png' },
+                  { ethnicity: '白人', image: '/white_facial_features/3.png' }
+                ].map((item) => (
+                  <div key={item.ethnicity} className="flex-shrink-0 w-32 snap-center">
+                    <div className="aspect-[3/4] overflow-hidden mb-2 bg-gray-100 rounded-lg">
+                      <img src={item.image} alt={`${item.ethnicity}面部特征`} className="w-full h-full object-cover" />
+                    </div>
+                    <p className="text-xs text-center font-normal" style={{color: '#1F1F1F'}}>{item.ethnicity}</p>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <p className="text-center text-sm tracking-wide" style={{color: '#6B7280'}}>
