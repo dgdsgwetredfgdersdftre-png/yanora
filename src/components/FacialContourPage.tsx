@@ -109,13 +109,13 @@ function FacialContourPage() {
                 {/* 额头标注 - 左侧 */}
                 <div className="absolute" style={{top: '18%', left: '28%'}}>
                   <div className="relative">
-                    {/* 点 */}
-                    <div className="absolute w-2.5 h-2.5 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A', left: '-5px', top: '-5px'}}></div>
-                    {/* 线条 */}
-                    <div className="absolute w-20 h-0.5" style={{backgroundColor: '#1C2B3A', top: '-1px', right: '0'}}></div>
-                    {/* 浮动文字框 */}
+                    {/* 点 - 桌面端显示 */}
+                    <div className="hidden md:block absolute w-2.5 h-2.5 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A', left: '-5px', top: '-5px'}}></div>
+                    {/* 线条 - 桌面端显示 */}
+                    <div className="hidden md:block absolute w-20 h-0.5" style={{backgroundColor: '#1C2B3A', top: '-1px', right: '0'}}></div>
+                    {/* 浮动文字框 - 桌面端 */}
                     <div
-                      className="absolute px-4 py-2 bg-white border shadow-lg"
+                      className="hidden md:block absolute px-4 py-2 bg-white border shadow-lg"
                       style={{
                         borderColor: '#1C2B3A',
                         right: '84px',
@@ -126,19 +126,29 @@ function FacialContourPage() {
                     >
                       <p className="text-sm font-light whitespace-nowrap" style={{color: '#1F1F1F'}}>额头</p>
                     </div>
+                    {/* 移动端标签 */}
+                    <div
+                      className="md:hidden px-2 py-1 bg-white border shadow-lg"
+                      style={{
+                        borderColor: '#1C2B3A',
+                        transform: 'translate(-50%, -50%)'
+                      }}
+                    >
+                      <p className="text-xs font-light whitespace-nowrap" style={{color: '#1F1F1F'}}>额头</p>
+                    </div>
                   </div>
                 </div>
 
                 {/* 颧骨标注 - 右侧 */}
                 <div className="absolute" style={{top: '36%', right: '20%'}}>
                   <div className="relative">
-                    {/* 点 */}
-                    <div className="absolute w-2.5 h-2.5 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A', right: '-5px', top: '-5px'}}></div>
-                    {/* 线条 */}
-                    <div className="absolute w-20 h-0.5" style={{backgroundColor: '#1C2B3A', top: '-1px', left: '0'}}></div>
-                    {/* 浮动文字框 */}
+                    {/* 点 - 桌面端显示 */}
+                    <div className="hidden md:block absolute w-2.5 h-2.5 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A', right: '-5px', top: '-5px'}}></div>
+                    {/* 线条 - 桌面端显示 */}
+                    <div className="hidden md:block absolute w-20 h-0.5" style={{backgroundColor: '#1C2B3A', top: '-1px', left: '0'}}></div>
+                    {/* 浮动文字框 - 桌面端 */}
                     <div
-                      className="absolute px-4 py-2 bg-white border shadow-lg"
+                      className="hidden md:block absolute px-4 py-2 bg-white border shadow-lg"
                       style={{
                         borderColor: '#1C2B3A',
                         left: '84px',
@@ -149,19 +159,29 @@ function FacialContourPage() {
                     >
                       <p className="text-sm font-light whitespace-nowrap" style={{color: '#1F1F1F'}}>颧骨</p>
                     </div>
+                    {/* 移动端标签 */}
+                    <div
+                      className="md:hidden px-2 py-1 bg-white border shadow-lg"
+                      style={{
+                        borderColor: '#1C2B3A',
+                        transform: 'translate(-50%, -50%)'
+                      }}
+                    >
+                      <p className="text-xs font-light whitespace-nowrap" style={{color: '#1F1F1F'}}>颧骨</p>
+                    </div>
                   </div>
                 </div>
 
                 {/* 下巴标注 - 左侧 */}
                 <div className="absolute" style={{top: '56%', left: '25%'}}>
                   <div className="relative">
-                    {/* 点 */}
-                    <div className="absolute w-2.5 h-2.5 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A', left: '-5px', top: '-5px'}}></div>
-                    {/* 线条 */}
-                    <div className="absolute w-20 h-0.5" style={{backgroundColor: '#1C2B3A', top: '-1px', right: '0'}}></div>
-                    {/* 浮动文字框 */}
+                    {/* 点 - 桌面端显示 */}
+                    <div className="hidden md:block absolute w-2.5 h-2.5 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A', left: '-5px', top: '-5px'}}></div>
+                    {/* 线条 - 桌面端显示 */}
+                    <div className="hidden md:block absolute w-20 h-0.5" style={{backgroundColor: '#1C2B3A', top: '-1px', right: '0'}}></div>
+                    {/* 浮动文字框 - 桌面端 */}
                     <div
-                      className="absolute px-4 py-2 bg-white border shadow-lg"
+                      className="hidden md:block absolute px-4 py-2 bg-white border shadow-lg"
                       style={{
                         borderColor: '#1C2B3A',
                         right: '84px',
@@ -172,19 +192,29 @@ function FacialContourPage() {
                     >
                       <p className="text-sm font-light whitespace-nowrap" style={{color: '#1F1F1F'}}>下巴</p>
                     </div>
+                    {/* 移动端标签 */}
+                    <div
+                      className="md:hidden px-2 py-1 bg-white border shadow-lg"
+                      style={{
+                        borderColor: '#1C2B3A',
+                        transform: 'translate(-50%, -50%)'
+                      }}
+                    >
+                      <p className="text-xs font-light whitespace-nowrap" style={{color: '#1F1F1F'}}>下巴</p>
+                    </div>
                   </div>
                 </div>
 
                 {/* 下颌线标注 - 右侧 */}
                 <div className="absolute" style={{top: '50%', right: '35%'}}>
                   <div className="relative">
-                    {/* 点 */}
-                    <div className="absolute w-2.5 h-2.5 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A', right: '-5px', top: '-5px'}}></div>
-                    {/* 线条 */}
-                    <div className="absolute w-20 h-0.5" style={{backgroundColor: '#1C2B3A', top: '-1px', left: '0'}}></div>
-                    {/* 浮动文字框 */}
+                    {/* 点 - 桌面端显示 */}
+                    <div className="hidden md:block absolute w-2.5 h-2.5 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A', right: '-5px', top: '-5px'}}></div>
+                    {/* 线条 - 桌面端显示 */}
+                    <div className="hidden md:block absolute w-20 h-0.5" style={{backgroundColor: '#1C2B3A', top: '-1px', left: '0'}}></div>
+                    {/* 浮动文字框 - 桌面端 */}
                     <div
-                      className="absolute px-4 py-2 bg-white border shadow-lg"
+                      className="hidden md:block absolute px-4 py-2 bg-white border shadow-lg"
                       style={{
                         borderColor: '#1C2B3A',
                         left: '84px',
@@ -194,6 +224,16 @@ function FacialContourPage() {
                       }}
                     >
                       <p className="text-sm font-light whitespace-nowrap" style={{color: '#1F1F1F'}}>下颌线</p>
+                    </div>
+                    {/* 移动端标签 */}
+                    <div
+                      className="md:hidden px-2 py-1 bg-white border shadow-lg"
+                      style={{
+                        borderColor: '#1C2B3A',
+                        transform: 'translate(-50%, -50%)'
+                      }}
+                    >
+                      <p className="text-xs font-light whitespace-nowrap" style={{color: '#1F1F1F'}}>下颌线</p>
                     </div>
                   </div>
                 </div>
