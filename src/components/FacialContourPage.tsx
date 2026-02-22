@@ -82,14 +82,27 @@ function FacialContourPage() {
           <h1 className="text-3xl md:text-5xl font-light mb-8 leading-relaxed tracking-wide" style={{color: '#1F1F1F'}}>
             面部轮廓重塑
           </h1>
-          <p className="text-base md:text-lg font-light leading-relaxed" style={{color: '#4B5563'}}>
+          <p className="text-base md:text-lg font-light leading-relaxed mb-12" style={{color: '#4B5563'}}>
             我们根据不同人种的面部结构和骨架特征，结合个人审美偏好，科学地提供个性化整形解决方案。
           </p>
+          <button
+            onClick={() => {
+              const section = document.getElementById('facial-contour-section');
+              section?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="px-8 py-3 text-sm md:text-base font-light tracking-wide transition-all duration-300 hover:opacity-80"
+            style={{
+              backgroundColor: '#1C2B3A',
+              color: '#FFFFFF'
+            }}
+          >
+            现在开始探索
+          </button>
         </div>
       </section>
 
       {/* Facial Contour Section - Bone & Soft Tissue */}
-      <section className="py-20 md:py-28 px-6 md:px-12">
+      <section id="facial-contour-section" className="py-20 md:py-28 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16 text-center">
             <h2 className="text-2xl md:text-3xl font-light mb-4 tracking-wide" style={{color: '#1F1F1F'}}>
