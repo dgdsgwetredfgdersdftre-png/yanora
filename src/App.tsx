@@ -793,31 +793,82 @@ function App() {
           <h2 className="text-2xl md:text-4xl font-light text-center mb-6 md:mb-8" style={{color: '#1F2937'}}>
             真实案例对比
           </h2>
-          <div className="border-2 md:border-4 p-4 md:p-12" style={{borderColor: '#B9CBDC'}}>
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 mb-8">
-              <div className="w-48 md:w-80 aspect-[3/4] flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
-                <span className="text-gray-500 text-xs md:text-sm">手术前</span>
+
+          {/* Desktop layout - unchanged */}
+          <div className="hidden md:block">
+            <div className="border-2 md:border-4 p-4 md:p-12" style={{borderColor: '#B9CBDC'}}>
+              <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 mb-8">
+                <div className="w-48 md:w-80 aspect-[3/4] flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
+                  <span className="text-gray-500 text-xs md:text-sm">手术前</span>
+                </div>
+                <div className="w-48 md:w-80 aspect-[3/4] flex items-center justify-center" style={{backgroundColor: '#A0A7B5'}}>
+                  <span className="text-white text-xs md:text-sm">手术后</span>
+                </div>
               </div>
-              <div className="w-48 md:w-80 aspect-[3/4] flex items-center justify-center" style={{backgroundColor: '#A0A7B5'}}>
-                <span className="text-white text-xs md:text-sm">手术后</span>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 max-w-4xl mx-auto">
+                <div className="space-y-2 md:space-y-3 text-xs md:text-sm" style={{color: '#4B5563'}}>
+                  <p className="font-normal mb-2 md:mb-4">手术前特征：</p>
+                  <p className="font-light">• 面部轮廓不够立体</p>
+                  <p className="font-light">• 鼻梁较低</p>
+                  <p className="font-light">• 下颌线条不够明显</p>
+                  <p className="font-light">• 整体面部缺乏层次感</p>
+                </div>
+
+                <div className="space-y-2 md:space-y-3 text-xs md:text-sm" style={{color: '#4B5563'}}>
+                  <p className="font-normal mb-2 md:mb-4">手术后特征：</p>
+                  <p className="font-light">• 面部轮廓立体分明</p>
+                  <p className="font-light">• 鼻梁挺拔自然</p>
+                  <p className="font-light">• 下颌线条流畅优雅</p>
+                  <p className="font-light">• 整体和谐美观，充满自信</p>
+                </div>
               </div>
             </div>
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 max-w-4xl mx-auto">
-              <div className="space-y-2 md:space-y-3 text-xs md:text-sm" style={{color: '#4B5563'}}>
-                <p className="font-normal mb-2 md:mb-4">手术前特征：</p>
-                <p className="font-light">• 面部轮廓不够立体</p>
-                <p className="font-light">• 鼻梁较低</p>
-                <p className="font-light">• 下颌线条不够明显</p>
-                <p className="font-light">• 整体面部缺乏层次感</p>
+          {/* Mobile layout - new design inspired by reference */}
+          <div className="md:hidden">
+            <div className="bg-white rounded-3xl p-6 shadow-lg" style={{borderColor: '#B9CBDC', border: '3px solid #B9CBDC'}}>
+              {/* Before/After Images */}
+              <div className="grid grid-cols-2 gap-3 mb-6">
+                <div className="aspect-[3/4] rounded-2xl overflow-hidden flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
+                  <span className="text-gray-600 text-xs">手术前</span>
+                </div>
+                <div className="aspect-[3/4] rounded-2xl overflow-hidden flex items-center justify-center" style={{backgroundColor: '#A0A7B5'}}>
+                  <span className="text-white text-xs">手术后</span>
+                </div>
               </div>
 
-              <div className="space-y-2 md:space-y-3 text-xs md:text-sm" style={{color: '#4B5563'}}>
-                <p className="font-normal mb-2 md:mb-4">手术后特征：</p>
-                <p className="font-light">• 面部轮廓立体分明</p>
-                <p className="font-light">• 鼻梁挺拔自然</p>
-                <p className="font-light">• 下颌线条流畅优雅</p>
-                <p className="font-light">• 整体和谐美观，充满自信</p>
+              {/* Timeline */}
+              <div className="relative mb-8">
+                <div className="absolute left-0 right-0 top-1/2 h-px" style={{backgroundColor: '#D1D5DB', transform: 'translateY(-50%)'}}></div>
+                <div className="relative text-center">
+                  <span className="inline-block px-4 py-1 text-sm font-light" style={{backgroundColor: '#F3F4F6', color: '#6B7280'}}>8 个月</span>
+                </div>
+              </div>
+
+              {/* Features list */}
+              <div className="space-y-6">
+                <div className="text-center">
+                  <h3 className="text-lg font-normal mb-3" style={{color: '#1F1F1F'}}>面部轮廓立体提升</h3>
+                  <p className="text-xs leading-relaxed" style={{color: '#6B7280'}}>
+                    通过专业的面部轮廓手术，使面部线条更加立体分明
+                  </p>
+                </div>
+
+                <div className="text-center">
+                  <h3 className="text-lg font-normal mb-3" style={{color: '#1F1F1F'}}>鼻梁挺拔自然</h3>
+                  <p className="text-xs leading-relaxed" style={{color: '#6B7280'}}>
+                    精准的鼻部整形技术，打造自然挺拔的鼻梁线条
+                  </p>
+                </div>
+
+                <div className="text-center">
+                  <h3 className="text-lg font-normal mb-3" style={{color: '#1F1F1F'}}>下颌线条优化</h3>
+                  <p className="text-xs leading-relaxed" style={{color: '#6B7280'}}>
+                    塑造流畅优雅的下颌线条，提升整体面部和谐度
+                  </p>
+                </div>
               </div>
             </div>
           </div>
