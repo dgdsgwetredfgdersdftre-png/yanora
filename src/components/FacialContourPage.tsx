@@ -130,7 +130,7 @@ function FacialContourPage() {
                 </div>
 
                 {/* 颧骨标注 - 右侧 */}
-                <div className="absolute" style={{top: '44%', right: '20%'}}>
+                <div className="absolute" style={{top: '40%', right: '20%'}}>
                   <div className="relative">
                     {/* 点 */}
                     <div className="absolute w-2.5 h-2.5 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A', right: '-5px', top: '-5px'}}></div>
@@ -153,7 +153,7 @@ function FacialContourPage() {
                 </div>
 
                 {/* 下颌线标注 - 左侧 */}
-                <div className="absolute" style={{top: '68%', left: '25%'}}>
+                <div className="absolute" style={{top: '56%', left: '25%'}}>
                   <div className="relative">
                     {/* 点 */}
                     <div className="absolute w-2.5 h-2.5 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A', left: '-5px', top: '-5px'}}></div>
@@ -176,7 +176,7 @@ function FacialContourPage() {
                 </div>
 
                 {/* 下巴标注 - 右侧 */}
-                <div className="absolute" style={{top: '85%', right: '35%'}}>
+                <div className="absolute" style={{top: '50%', right: '35%'}}>
                   <div className="relative">
                     {/* 点 */}
                     <div className="absolute w-2.5 h-2.5 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A', right: '-5px', top: '-5px'}}></div>
