@@ -751,11 +751,20 @@ function App() {
 
       <section className="py-12 md:py-24 px-4 md:px-12" style={{backgroundColor: '#F3F4F6'}}>
         <div className="max-w-6xl mx-auto">
-          <p className="text-center text-base mb-16 leading-relaxed tracking-wide" style={{color: '#4B5563'}}>
-            注重面部整体比例和谐，基于美学对不同人种有个性化的定制方案
-          </p>
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-light mb-4 tracking-wide" style={{color: '#1F1F1F'}}>
+              不同人种的面部特征
+            </h2>
+            <p className="text-sm md:text-base leading-relaxed tracking-wide" style={{color: '#4B5563'}}>
+              注重面部整体比例和谐，基于美学对不同人种有个性化的定制方案
+            </p>
+          </div>
 
-          <div className="border-4 p-4 md:p-24" style={{borderColor: '#B9CBDC'}}>
+          <div className="border-4 p-4 md:p-24 relative overflow-hidden" style={{borderColor: '#B9CBDC', backgroundColor: '#FFFFFF'}}>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-50 to-transparent opacity-30 rounded-full -mr-32 -mt-32"></div>
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-blue-50 to-transparent opacity-30 rounded-full -ml-24 -mb-24"></div>
+
+            <div className="relative z-10">
             <div className="hidden md:grid md:grid-cols-3 gap-6 md:gap-16 mb-6 md:mb-16">
               {[
                 {
@@ -885,9 +894,24 @@ function App() {
               </div>
             </div>
 
-            <p className="text-center text-sm tracking-wide mt-8" style={{color: '#6B7280'}}>
-              了解你的面部特征，立即开始行之有效的行动来提升你的容颜
-            </p>
+            <div className="text-center mt-8 pt-8 border-t border-gray-200">
+              <p className="text-sm tracking-wide mb-4" style={{color: '#6B7280'}}>
+                了解你的面部特征，立即开始行之有效的行动来提升你的容颜
+              </p>
+              <button
+                onClick={() => navigate('/booking')}
+                className="px-8 py-3 text-white text-sm transition tracking-wider inline-flex items-center gap-2"
+                style={{backgroundColor: '#1C2B3A'}}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#101D29'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#1C2B3A'}
+              >
+                立即预约咨询
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+            </div>
           </div>
         </div>
       </section>
