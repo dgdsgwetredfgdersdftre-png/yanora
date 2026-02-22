@@ -579,29 +579,15 @@ function App() {
             <div className="grid grid-cols-2 gap-3">
               <div className="aspect-square">
                 <ImageCompareSlider
-                  beforeLabel="【面部轮廓 前】"
-                  afterLabel="【面部轮廓 后】"
+                  beforeLabel="【此处放置案例照片 A】"
+                  afterLabel="【此处放置案例照片 B】"
                   initialPosition={50}
                 />
               </div>
               <div className="aspect-square">
                 <ImageCompareSlider
-                  beforeLabel="【身体塑形 前】"
-                  afterLabel="【身体塑形 后】"
-                  initialPosition={50}
-                />
-              </div>
-              <div className="aspect-square">
-                <ImageCompareSlider
-                  beforeLabel="【注射提升 前】"
-                  afterLabel="【注射提升 后】"
-                  initialPosition={50}
-                />
-              </div>
-              <div className="aspect-square">
-                <ImageCompareSlider
-                  beforeLabel="【植发 前】"
-                  afterLabel="【植发 后】"
+                  beforeLabel="【此处放置案例照片 C】"
+                  afterLabel="【此处放置案例照片 D】"
                   initialPosition={50}
                 />
               </div>
