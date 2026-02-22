@@ -576,11 +576,32 @@ function App() {
       <section className="md:hidden py-8 px-4">
         <div className="w-full">
           <div className="p-3 flex flex-col gap-4 rounded-3xl" style={{border: '4px solid #B9CBDC'}}>
-            <div className="grid grid-cols-1 gap-4">
-              <div className="aspect-[3/3]">
+            <div className="grid grid-cols-2 gap-3">
+              <div className="aspect-square">
                 <ImageCompareSlider
-                  beforeLabel="【此处放置案例照片 A】"
-                  afterLabel="【此处放置案例照片 B】"
+                  beforeLabel="【面部轮廓 前】"
+                  afterLabel="【面部轮廓 后】"
+                  initialPosition={50}
+                />
+              </div>
+              <div className="aspect-square">
+                <ImageCompareSlider
+                  beforeLabel="【身体塑形 前】"
+                  afterLabel="【身体塑形 后】"
+                  initialPosition={50}
+                />
+              </div>
+              <div className="aspect-square">
+                <ImageCompareSlider
+                  beforeLabel="【注射提升 前】"
+                  afterLabel="【注射提升 后】"
+                  initialPosition={50}
+                />
+              </div>
+              <div className="aspect-square">
+                <ImageCompareSlider
+                  beforeLabel="【植发 前】"
+                  afterLabel="【植发 后】"
                   initialPosition={50}
                 />
               </div>
