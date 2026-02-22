@@ -958,25 +958,25 @@ function App() {
           {/* Desktop layout - new design */}
           <div className="hidden md:flex md:flex-col md:items-center">
             {/* Before/After Images Section with Connected Border */}
-            <div className="relative flex gap-16 flex-shrink-0 mb-12">
+            <div className="relative flex gap-32 flex-shrink-0 mb-12">
               <svg className="absolute inset-0 w-full h-full" style={{ overflow: 'visible' }}>
                 <path
-                  d="M 20,20 L 340,20 L 340,404 L 20,404 L 20,20 M 396,20 L 716,20 L 716,404 L 396,404 L 396,20"
+                  d="M 20,20 L 420,20 L 420,524 L 20,524 L 20,20 M 548,20 L 948,20 L 948,524 L 548,524 L 548,20"
                   fill="none"
                   stroke="#D1D5DB"
                   strokeWidth="2"
                 />
               </svg>
-              <div className="overflow-hidden relative" style={{width: '320px', backgroundColor: '#F3F4F6'}}>
-                <div className="h-96 flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
+              <div className="overflow-hidden relative" style={{width: '400px', backgroundColor: '#F3F4F6'}}>
+                <div className="flex items-center justify-center" style={{height: '500px', backgroundColor: '#B9CBDC'}}>
                   <span className="text-gray-600 text-sm">术前照片 (Before)</span>
                 </div>
                 <div className="absolute bottom-4 left-4 bg-white px-3 py-1.5 shadow">
                   <span className="text-xs font-medium text-gray-700">BEFORE</span>
                 </div>
               </div>
-              <div className="overflow-hidden relative" style={{width: '320px', backgroundColor: '#F3F4F6'}}>
-                <div className="h-96 flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
+              <div className="overflow-hidden relative" style={{width: '400px', backgroundColor: '#F3F4F6'}}>
+                <div className="flex items-center justify-center" style={{height: '500px', backgroundColor: '#B9CBDC'}}>
                   <span className="text-gray-600 text-sm">术后照片 (After)</span>
                 </div>
                 <div className="absolute bottom-4 left-4 bg-white px-3 py-1.5 shadow">
