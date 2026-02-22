@@ -996,7 +996,7 @@ function App() {
       </section>
 
       <section className="w-full overflow-hidden" style={{ height: '600px' }}>
-        <div className="w-full h-full flex justify-center items-center" style={{ backgroundColor: '#f5f5f5' }}>
+        <div className="w-full h-full flex justify-center items-center" style={{ backgroundColor: '#f5f5f5', border: '4px solid red' }}>
           <img
             src="/Gemini_Generated_Image_scqqizscqqizscqq_(1).png"
             alt="Aesthetic Transformation"
