@@ -788,16 +788,16 @@ function App() {
         </section>
       </div>
 
-      <section className="py-12 md:py-24 px-12" style={{backgroundColor: '#F3F4F6'}}>
+      <section className="py-8 md:py-24 px-3 md:px-12" style={{backgroundColor: '#F3F4F6'}}>
         <div className="max-w-6xl mx-auto">
-          <div className="border-4 p-12" style={{borderColor: '#B9CBDC'}}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-              <div className="space-y-6">
+          <div className="border-2 md:border-4 p-4 md:p-12" style={{borderColor: '#B9CBDC'}}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16">
+              <div className="space-y-3 md:space-y-6">
                 <div className="aspect-[3/4] flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
-                  <span className="text-gray-500 text-sm">手术前</span>
+                  <span className="text-gray-500 text-xs md:text-sm">手术前</span>
                 </div>
-                <div className="space-y-3 text-sm" style={{color: '#4B5563'}}>
-                  <p className="font-normal mb-4">手术前特征：</p>
+                <div className="space-y-2 md:space-y-3 text-xs md:text-sm" style={{color: '#4B5563'}}>
+                  <p className="font-normal mb-2 md:mb-4">手术前特征：</p>
                   <p className="font-light">• 面部轮廓不够立体</p>
                   <p className="font-light">• 鼻梁较低</p>
                   <p className="font-light">• 下颌线条不够明显</p>
@@ -805,12 +805,12 @@ function App() {
                 </div>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-3 md:space-y-6">
                 <div className="aspect-[3/4] flex items-center justify-center" style={{backgroundColor: '#A0A7B5'}}>
-                  <span className="text-white text-sm">手术后</span>
+                  <span className="text-white text-xs md:text-sm">手术后</span>
                 </div>
-                <div className="space-y-3 text-sm" style={{color: '#4B5563'}}>
-                  <p className="font-normal mb-4">手术后特征：</p>
+                <div className="space-y-2 md:space-y-3 text-xs md:text-sm" style={{color: '#4B5563'}}>
+                  <p className="font-normal mb-2 md:mb-4">手术后特征：</p>
                   <p className="font-light">• 面部轮廓立体分明</p>
                   <p className="font-light">• 鼻梁挺拔自然</p>
                   <p className="font-light">• 下颌线条流畅优雅</p>
