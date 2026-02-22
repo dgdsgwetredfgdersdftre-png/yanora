@@ -768,74 +768,13 @@ function App() {
             </p>
           </div>
 
-          <div className="border-4 p-4 md:p-24 relative overflow-hidden" style={{borderColor: '#B9CBDC', backgroundColor: '#FFFFFF'}}>
+          {/* Desktop Layout */}
+          <div className="hidden md:block border-4 p-24 relative overflow-hidden" style={{borderColor: '#B9CBDC', backgroundColor: '#FFFFFF'}}>
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-50 to-transparent opacity-30 rounded-full -mr-32 -mt-32"></div>
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-blue-50 to-transparent opacity-30 rounded-full -ml-24 -mb-24"></div>
 
             <div className="relative z-10">
-            <div className="hidden md:grid md:grid-cols-3 gap-6 md:gap-16 mb-6 md:mb-16">
-              {[
-                {
-                  ethnicity: '黑人',
-                  image: '/black_facial_features/1_(1).png',
-                  features: {
-                    bone: '面中部常显前突，但鼻骨低平；眶距可能较宽；下颌骨发达，嘴唇极厚且唇红外翻。',
-                    soft: '皮肤较厚，不易长皱纹但需关注瘢痕愈合；鼻翼宽大，鼻孔扁平，鼻小柱短；多为双眼皮但形态深邃。'
-                  }
-                },
-                {
-                  ethnicity: '黄种人',
-                  image: '/east_asian_facial_features/1_(2).png',
-                  features: {
-                    bone: '颧骨常显外扩，下颌角棱角分明，眉骨与眶缘发育平缓。',
-                    soft: '单眼皮或内双比例高，常伴有内眦赘皮；鼻梁偏低，鼻头圆润，鼻基底凹陷；软组织相对丰厚。'
-                  }
-                },
-                {
-                  ethnicity: '白人',
-                  image: '/white_facial_features/3.png',
-                  features: {
-                    bone: '眉骨与眶缘极为突出，颧骨转向侧面，下颌骨线条分明，下巴尖翘。',
-                    soft: '皮肤较薄，脂肪含量少，容易出现皱纹和骨相显露；鼻梁高挺，鼻翼窄，嘴唇偏薄；双眼皮宽而深。'
-                  }
-                }
-              ].map((item) => (
-                <div key={item.ethnicity} className="text-center">
-                  <div className="w-full aspect-[3/4] overflow-hidden mb-4 bg-gray-100">
-                    <img src={item.image} alt={`${item.ethnicity}面部特征`} className="w-full h-full object-contain" />
-                  </div>
-                  <button
-                    onClick={() => setExpandedEthnicity(expandedEthnicity === item.ethnicity ? null : item.ethnicity)}
-                    className="text-sm font-normal tracking-wide mb-3 transition-colors duration-200 hover:opacity-70"
-                    style={{color: '#1F1F1F'}}
-                  >
-                    {item.ethnicity} {expandedEthnicity === item.ethnicity ? '▲' : '▼'}
-                  </button>
-
-                  <div
-                    className="overflow-hidden transition-all duration-300 ease-in-out"
-                    style={{
-                      maxHeight: expandedEthnicity === item.ethnicity ? '500px' : '0',
-                      opacity: expandedEthnicity === item.ethnicity ? 1 : 0
-                    }}
-                  >
-                    <div className="text-left space-y-3 px-4 py-2">
-                      <div>
-                        <h4 className="text-xs font-medium mb-1" style={{color: '#1F1F1F'}}>1. 骨骼特征：</h4>
-                        <p className="text-xs leading-relaxed" style={{color: '#6B7280'}}>{item.features.bone}</p>
-                      </div>
-                      <div>
-                        <h4 className="text-xs font-medium mb-1" style={{color: '#1F1F1F'}}>2. 软组织特征：</h4>
-                        <p className="text-xs leading-relaxed" style={{color: '#6B7280'}}>{item.features.soft}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="md:hidden mb-6">
-              <div className="space-y-4">
+              <div className="grid grid-cols-3 gap-16 mb-16">
                 {[
                   {
                     ethnicity: '黑人',
@@ -862,22 +801,17 @@ function App() {
                     }
                   }
                 ].map((item) => (
-                  <div key={item.ethnicity} className="bg-white p-3 rounded-lg border border-gray-200">
-                    <div className="flex gap-3 mb-2">
-                      <div className="w-20 aspect-[3/4] overflow-hidden bg-gray-100 flex-shrink-0">
-                        <img src={item.image} alt={`${item.ethnicity}面部特征`} className="w-full h-full object-cover" />
-                      </div>
-                      <div className="flex-1">
-                        <button
-                          onClick={() => setExpandedEthnicity(expandedEthnicity === item.ethnicity ? null : item.ethnicity)}
-                          className="text-sm font-normal tracking-wide transition-colors duration-200 hover:opacity-70 flex items-center justify-between w-full"
-                          style={{color: '#1F1F1F'}}
-                        >
-                          <span>{item.ethnicity}</span>
-                          <span className="text-xs">{expandedEthnicity === item.ethnicity ? '▲' : '▼'}</span>
-                        </button>
-                      </div>
+                  <div key={item.ethnicity} className="text-center">
+                    <div className="w-full aspect-[3/4] overflow-hidden mb-4 bg-gray-100">
+                      <img src={item.image} alt={`${item.ethnicity}面部特征`} className="w-full h-full object-contain" />
                     </div>
+                    <button
+                      onClick={() => setExpandedEthnicity(expandedEthnicity === item.ethnicity ? null : item.ethnicity)}
+                      className="text-sm font-normal tracking-wide mb-3 transition-colors duration-200 hover:opacity-70"
+                      style={{color: '#1F1F1F'}}
+                    >
+                      {item.ethnicity} {expandedEthnicity === item.ethnicity ? '▲' : '▼'}
+                    </button>
 
                     <div
                       className="overflow-hidden transition-all duration-300 ease-in-out"
@@ -886,7 +820,7 @@ function App() {
                         opacity: expandedEthnicity === item.ethnicity ? 1 : 0
                       }}
                     >
-                      <div className="text-left space-y-2 pt-2 border-t border-gray-100">
+                      <div className="text-left space-y-3 px-4 py-2">
                         <div>
                           <h4 className="text-xs font-medium mb-1" style={{color: '#1F1F1F'}}>1. 骨骼特征：</h4>
                           <p className="text-xs leading-relaxed" style={{color: '#6B7280'}}>{item.features.bone}</p>
@@ -900,12 +834,80 @@ function App() {
                   </div>
                 ))}
               </div>
+
+              <p className="text-center text-sm tracking-wide" style={{color: '#6B7280'}}>
+                了解你的面部特征，立即开始行之有效的行动来提升你的容颜
+              </p>
+            </div>
+          </div>
+
+          {/* Mobile Layout */}
+          <div className="md:hidden">
+            {/* Empty bordered box */}
+            <div className="border-4 p-4 mb-6 relative overflow-hidden" style={{borderColor: '#B9CBDC', backgroundColor: '#FFFFFF'}}>
+              <div className="w-full h-64 bg-gray-100 flex items-center justify-center">
+                <span className="text-gray-400 text-sm">面部特征展示</span>
+              </div>
             </div>
 
-            <p className="text-center text-sm tracking-wide mt-8" style={{color: '#6B7280'}}>
+            {/* Three cards below - one per row */}
+            <div className="space-y-4 mb-6">
+              {[
+                {
+                  ethnicity: '黑人',
+                  image: '/black_facial_features/1_(1).png',
+                  features: {
+                    bone: '面中部常显前突，但鼻骨低平；眶距可能较宽；下颌骨发达，嘴唇极厚且唇红外翻。',
+                    soft: '皮肤较厚，不易长皱纹但需关注瘢痕愈合；鼻翼宽大，鼻孔扁平，鼻小柱短；多为双眼皮但形态深邃。'
+                  }
+                },
+                {
+                  ethnicity: '黄种人',
+                  image: '/east_asian_facial_features/1_(2).png',
+                  features: {
+                    bone: '颧骨常显外扩，下颌角棱角分明，眉骨与眶缘发育平缓。',
+                    soft: '单眼皮或内双比例高，常伴有内眦赘皮；鼻梁偏低，鼻头圆润，鼻基底凹陷；软组织相对丰厚。'
+                  }
+                },
+                {
+                  ethnicity: '白人',
+                  image: '/white_facial_features/3.png',
+                  features: {
+                    bone: '眉骨与眶缘极为突出，颧骨转向侧面，下颌骨线条分明，下巴尖翘。',
+                    soft: '皮肤较薄，脂肪含量少，容易出现皱纹和骨相显露；鼻梁高挺，鼻翼窄，嘴唇偏薄；双眼皮宽而深。'
+                  }
+                }
+              ].map((item) => (
+                <div key={item.ethnicity} className="bg-white p-4 rounded-lg border-2 border-gray-200">
+                  <div className="flex gap-4">
+                    {/* Image on the left */}
+                    <div className="w-28 aspect-[3/4] overflow-hidden bg-gray-100 flex-shrink-0 rounded">
+                      <img src={item.image} alt={`${item.ethnicity}面部特征`} className="w-full h-full object-cover" />
+                    </div>
+
+                    {/* Text content on the right */}
+                    <div className="flex-1">
+                      <h3 className="text-base font-medium mb-3" style={{color: '#1F1F1F'}}>{item.ethnicity}</h3>
+
+                      <div className="space-y-2">
+                        <div>
+                          <h4 className="text-xs font-medium mb-1" style={{color: '#1F1F1F'}}>骨骼特征：</h4>
+                          <p className="text-xs leading-relaxed" style={{color: '#6B7280'}}>{item.features.bone}</p>
+                        </div>
+                        <div>
+                          <h4 className="text-xs font-medium mb-1" style={{color: '#1F1F1F'}}>软组织特征：</h4>
+                          <p className="text-xs leading-relaxed" style={{color: '#6B7280'}}>{item.features.soft}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <p className="text-center text-sm tracking-wide" style={{color: '#6B7280'}}>
               了解你的面部特征，立即开始行之有效的行动来提升你的容颜
             </p>
-            </div>
           </div>
         </div>
       </section>
