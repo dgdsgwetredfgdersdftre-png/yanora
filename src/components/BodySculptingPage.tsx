@@ -49,7 +49,8 @@ function BodySculptingPage() {
                 className="h-[400px] object-contain"
                 style={{
                   filter: 'brightness(1.1) contrast(1.05)',
-                  mixBlendMode: 'darken'
+                  mixBlendMode: 'darken',
+                  border: '2px solid red'
                 }}
               />
               <img
@@ -58,7 +59,8 @@ function BodySculptingPage() {
                 className="h-[400px] object-contain"
                 style={{
                   filter: 'brightness(1.1) contrast(1.05)',
-                  mixBlendMode: 'darken'
+                  mixBlendMode: 'darken',
+                  border: '2px solid red'
                 }}
               />
               <img
@@ -67,7 +69,8 @@ function BodySculptingPage() {
                 className="h-[400px] object-contain"
                 style={{
                   filter: 'brightness(1.1) contrast(1.05)',
-                  mixBlendMode: 'darken'
+                  mixBlendMode: 'darken',
+                  border: '2px solid red'
                 }}
               />
             </div>
@@ -111,7 +114,8 @@ function BodySculptingPage() {
                         style={{
                           filter: 'brightness(1.1) contrast(1.05)',
                           mixBlendMode: 'darken',
-                          height: 'auto'
+                          height: 'auto',
+                          border: '2px solid red'
                         }}
                       />
                     </div>
