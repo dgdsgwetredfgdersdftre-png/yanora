@@ -828,7 +828,7 @@ function App() {
 
           {/* Mobile layout - new design inspired by reference */}
           <div className="md:hidden">
-            <div className="bg-white rounded-3xl p-6 shadow-lg" style={{borderColor: '#B9CBDC', border: '3px solid #B9CBDC'}}>
+            <div className="bg-white p-6" style={{borderColor: '#B9CBDC', border: '3px solid #B9CBDC'}}>
               {/* Before/After Images */}
               <div className="grid grid-cols-2 gap-3 mb-6">
                 <div className="aspect-[3/4] rounded-2xl overflow-hidden flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
