@@ -5,6 +5,7 @@ import { User } from '@supabase/supabase-js';
 import { LogOut, User as UserIcon, Menu, X } from 'lucide-react';
 import ImageCompareSlider from './components/ImageCompareSlider';
 import CaseStudiesSection from './components/CaseStudiesSection';
+import MobileTestimonialCarousel from './components/MobileTestimonialCarousel';
 
 interface Profile {
   avatar_url: string | null;
@@ -825,24 +826,33 @@ function App() {
 
       <section className="py-12 md:py-24 relative overflow-hidden bg-white">
         <div className="relative">
-          <h2 className="text-3xl font-light text-center mb-4 tracking-wide px-12" style={{color: '#1F1F1F'}}>
+          <h2 className="text-2xl md:text-3xl font-light text-center mb-3 tracking-wide px-6 md:px-12" style={{color: '#1F1F1F'}}>
             客户对我们的评价
           </h2>
-          <div className="w-20 h-px mx-auto mb-6" style={{backgroundColor: '#A0A7B5'}}></div>
+          <p className="text-sm md:text-base text-center mb-2" style={{color: '#6B7280'}}>我们的客户遍布全世界</p>
+          <p className="text-xs md:text-sm text-center mb-6" style={{color: '#6B7280'}}>让客户满意是我们的永恒的追求</p>
+          <div className="w-20 h-px mx-auto mb-8 md:mb-12" style={{backgroundColor: '#A0A7B5'}}></div>
 
-          <div className="max-w-7xl mx-auto mb-8 px-12 grid grid-cols-12 gap-6 items-center">
-            <div className="col-span-3">
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">我们的客户遍布全世界</h3>
-              <p className="text-sm text-gray-600">让客户满意是我们的永恒的追求</p>
-            </div>
-            <div className="col-span-9 col-start-4">
-              <div className="w-full h-[36rem] overflow-hidden">
-                <img src="/map.png" alt="全球客户分布地图" className="w-full h-full object-cover" />
+          {/* Desktop map - unchanged */}
+          <div className="hidden md:block max-w-7xl mx-auto mb-8 px-12">
+            <div className="grid grid-cols-12 gap-6 items-center">
+              <div className="col-span-9 col-start-4">
+                <div className="w-full h-[36rem] overflow-hidden">
+                  <img src="/map.png" alt="全球客户分布地图" className="w-full h-full object-cover" />
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="relative overflow-hidden">
+          {/* Mobile map - responsive */}
+          <div className="md:hidden px-4 mb-8">
+            <div className="w-full overflow-hidden">
+              <img src="/map.png" alt="全球客户分布地图" className="w-full h-auto object-contain" />
+            </div>
+          </div>
+
+          {/* Desktop testimonials - unchanged */}
+          <div className="hidden md:block relative overflow-hidden">
             <div
               className="flex gap-24 animate-scroll-testimonials px-12"
               style={{
@@ -957,6 +967,11 @@ function App() {
                 />
               ))}
             </div>
+          </div>
+
+          {/* Mobile testimonials - carousel format */}
+          <div className="md:hidden">
+            <MobileTestimonialCarousel />
           </div>
         </div>
       </section>
