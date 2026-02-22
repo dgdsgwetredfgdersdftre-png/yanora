@@ -995,17 +995,6 @@ function App() {
         </div>
       </section>
 
-      <section className="w-full overflow-hidden" style={{ height: '862.5px' }}>
-        <div className="w-full h-full flex justify-center items-center" style={{ backgroundColor: '#f5f5f5', border: '4px solid red' }}>
-          <img
-            src="/Gemini_Generated_Image_scqqizscqqizscqq_(1).png"
-            alt="Aesthetic Transformation"
-            className="h-full w-auto object-contain"
-            style={{ transform: 'scale(1.3546875)' }}
-          />
-        </div>
-      </section>
-
       <section className="py-12 md:py-24 px-4 md:px-8" style={{backgroundColor: '#F3F4F6'}}>
         <div className="max-w-7xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-light text-center mb-3 tracking-wide" style={{color: '#1F1F1F'}}>
