@@ -40,37 +40,34 @@ function BodySculptingPage() {
             科学塑形方案，打造理想身材曲线
           </p>
 
-          <div className="bg-white p-0 mb-16" style={{border: '2px solid red'}}>
+          <div className="bg-white p-0 mb-16">
             {/* Desktop view - 3 images side by side */}
             <div className="hidden md:flex items-end justify-center gap-0">
               <img
                 src="/Gemini_Generated_Image_94iwds94iwds94iw.png"
                 alt="身体塑形示例1"
-                className="h-[500px] object-contain"
+                className="h-[600px] object-contain"
                 style={{
                   filter: 'brightness(1.1) contrast(1.05)',
-                  mixBlendMode: 'darken',
-                  border: '2px solid red'
+                  mixBlendMode: 'darken'
                 }}
               />
               <img
                 src="/Gemini_Generated_Image_iubeodiubeodiube.png"
                 alt="身体塑形示例2"
-                className="h-[500px] object-contain"
+                className="h-[600px] object-contain"
                 style={{
                   filter: 'brightness(1.1) contrast(1.05)',
-                  mixBlendMode: 'darken',
-                  border: '2px solid red'
+                  mixBlendMode: 'darken'
                 }}
               />
               <img
                 src="/Gemini_Generated_Image_u1lac1u1lac1u1la.png"
                 alt="身体塑形示例3"
-                className="h-[500px] object-contain"
+                className="h-[600px] object-contain"
                 style={{
                   filter: 'brightness(1.1) contrast(1.05)',
-                  mixBlendMode: 'darken',
-                  border: '2px solid red'
+                  mixBlendMode: 'darken'
                 }}
               />
             </div>
@@ -114,8 +111,7 @@ function BodySculptingPage() {
                         style={{
                           filter: 'brightness(1.1) contrast(1.05)',
                           mixBlendMode: 'darken',
-                          height: 'auto',
-                          border: '2px solid red'
+                          height: 'auto'
                         }}
                       />
                     </div>
