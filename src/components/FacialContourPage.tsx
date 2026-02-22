@@ -131,7 +131,8 @@ function FacialContourPage() {
                       className="md:hidden px-2 py-1 bg-white border shadow-lg"
                       style={{
                         borderColor: '#1C2B3A',
-                        transform: 'translate(-50%, -50%)'
+                        transform: 'translate(-100%, -50%)',
+                        animation: 'floatUpDown 3s ease-in-out infinite'
                       }}
                     >
                       <p className="text-xs font-light whitespace-nowrap" style={{color: '#1F1F1F'}}>额头</p>
@@ -164,7 +165,8 @@ function FacialContourPage() {
                       className="md:hidden px-2 py-1 bg-white border shadow-lg"
                       style={{
                         borderColor: '#1C2B3A',
-                        transform: 'translate(-50%, -50%)'
+                        transform: 'translate(0%, -50%)',
+                        animation: 'floatUpDown 3s ease-in-out infinite 0.5s'
                       }}
                     >
                       <p className="text-xs font-light whitespace-nowrap" style={{color: '#1F1F1F'}}>颧骨</p>
@@ -197,7 +199,8 @@ function FacialContourPage() {
                       className="md:hidden px-2 py-1 bg-white border shadow-lg"
                       style={{
                         borderColor: '#1C2B3A',
-                        transform: 'translate(-50%, -50%)'
+                        transform: 'translate(-100%, -50%)',
+                        animation: 'floatUpDown 3s ease-in-out infinite 1s'
                       }}
                     >
                       <p className="text-xs font-light whitespace-nowrap" style={{color: '#1F1F1F'}}>下巴</p>
@@ -230,7 +233,8 @@ function FacialContourPage() {
                       className="md:hidden px-2 py-1 bg-white border shadow-lg"
                       style={{
                         borderColor: '#1C2B3A',
-                        transform: 'translate(-50%, -50%)'
+                        transform: 'translate(0%, -50%)',
+                        animation: 'floatUpDown 3s ease-in-out infinite 1.5s'
                       }}
                     >
                       <p className="text-xs font-light whitespace-nowrap" style={{color: '#1F1F1F'}}>下颌线</p>
