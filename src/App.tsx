@@ -72,34 +72,42 @@ function TestimonialCard({ testimonial, isExpanded, onExpand, onCollapse }: { te
             </div>
           </div>
         ) : (
-          <div className="py-12">
-            <div className="flex gap-8 justify-center items-start mb-8">
-              <div className="bg-white shadow-2xl transition-all duration-700 transform -rotate-2 hover:rotate-0" style={{ width: '280px', aspectRatio: '3/4' }}>
-                <div className="w-full h-full flex items-center justify-center" style={{backgroundColor: '#E8F4EA'}}>
-                  <span className="text-sm" style={{color: '#6B7280'}}>WhatsApp {testimonial.id}</span>
-                </div>
-              </div>
-
-              <div className="bg-white shadow-2xl transition-all duration-700 hover:scale-105" style={{ width: '280px', aspectRatio: '3/4' }}>
-                <div className="w-full h-full flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
-                  <span className="text-sm text-gray-500">照片 {testimonial.id}-1</span>
-                </div>
-              </div>
-
-              <div className="bg-white shadow-2xl transition-all duration-700 transform rotate-2 hover:rotate-0" style={{ width: '280px', aspectRatio: '3/4' }}>
-                <div className="w-full h-full flex items-center justify-center" style={{backgroundColor: '#A0A7B5'}}>
-                  <span className="text-sm text-white">照片 {testimonial.id}-2</span>
-                </div>
-              </div>
+          <div className="py-12 relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 opacity-40 rounded-3xl"></div>
+            <div className="absolute inset-0">
+              <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full filter blur-3xl opacity-20"></div>
+              <div className="absolute bottom-0 left-0 w-80 h-80 bg-purple-100 rounded-full filter blur-3xl opacity-20"></div>
             </div>
 
-            <div className="text-center max-w-3xl mx-auto">
-              <p className="text-base font-light leading-relaxed mb-6" style={{color: '#4B5563'}}>
-                "{testimonial.message}"
-              </p>
-              <p className="text-sm font-normal" style={{color: '#1F1F1F'}}>
-                — {testimonial.name}
-              </p>
+            <div className="relative z-10">
+              <div className="flex gap-8 justify-center items-start mb-8">
+                <div className="bg-white shadow-2xl transition-all duration-700 transform -rotate-2 hover:rotate-0" style={{ width: '280px', aspectRatio: '3/4' }}>
+                  <div className="w-full h-full flex items-center justify-center" style={{backgroundColor: '#E8F4EA'}}>
+                    <span className="text-sm" style={{color: '#6B7280'}}>WhatsApp {testimonial.id}</span>
+                  </div>
+                </div>
+
+                <div className="bg-white shadow-2xl transition-all duration-700 hover:scale-105" style={{ width: '280px', aspectRatio: '3/4' }}>
+                  <div className="w-full h-full flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
+                    <span className="text-sm text-gray-500">照片 {testimonial.id}-1</span>
+                  </div>
+                </div>
+
+                <div className="bg-white shadow-2xl transition-all duration-700 transform rotate-2 hover:rotate-0" style={{ width: '280px', aspectRatio: '3/4' }}>
+                  <div className="w-full h-full flex items-center justify-center" style={{backgroundColor: '#A0A7B5'}}>
+                    <span className="text-sm text-white">照片 {testimonial.id}-2</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="text-center max-w-3xl mx-auto bg-white bg-opacity-60 backdrop-blur-sm rounded-2xl px-8 py-6 shadow-lg">
+                <p className="text-base font-light leading-relaxed mb-6" style={{color: '#4B5563'}}>
+                  "{testimonial.message}"
+                </p>
+                <p className="text-sm font-normal" style={{color: '#1F1F1F'}}>
+                  — {testimonial.name}
+                </p>
+              </div>
             </div>
           </div>
         )}
@@ -894,23 +902,9 @@ function App() {
               </div>
             </div>
 
-            <div className="text-center mt-8 pt-8 border-t border-gray-200">
-              <p className="text-sm tracking-wide mb-4" style={{color: '#6B7280'}}>
-                了解你的面部特征，立即开始行之有效的行动来提升你的容颜
-              </p>
-              <button
-                onClick={() => navigate('/booking')}
-                className="px-8 py-3 text-white text-sm transition tracking-wider inline-flex items-center gap-2"
-                style={{backgroundColor: '#1C2B3A'}}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#101D29'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#1C2B3A'}
-              >
-                立即预约咨询
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            </div>
+            <p className="text-center text-sm tracking-wide mt-8" style={{color: '#6B7280'}}>
+              了解你的面部特征，立即开始行之有效的行动来提升你的容颜
+            </p>
             </div>
           </div>
         </div>
