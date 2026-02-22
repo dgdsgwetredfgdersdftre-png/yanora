@@ -995,37 +995,35 @@ function App() {
         </div>
       </section>
 
-      <div className="flex flex-col">
-        <section className="py-12 md:py-24 px-4 md:px-8 order-2 md:order-1" style={{backgroundColor: '#F3F4F6'}}>
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-light text-center mb-3 tracking-wide" style={{color: '#1F1F1F'}}>
-              有没有想过你的脸会是什么样子
-            </h2>
-            <p className="text-sm md:text-base text-center mb-8 md:mb-16 tracking-wide" style={{color: '#6B7280'}}>展望未来</p>
+      <section className="w-full overflow-hidden">
+        <div className="w-full flex justify-start items-start">
+          <img
+            src="/Gemini_Generated_Image_scqqizscqqizscqq_(1).png"
+            alt="Aesthetic Transformation"
+            className="w-full h-auto object-cover"
+            style={{ objectPosition: 'top left' }}
+          />
+        </div>
+      </section>
 
-            <div className="mb-8 md:mb-16 mx-auto w-full md:w-4/5 lg:w-3/4">
-              <div className="h-64 md:h-96 lg:h-[575px]">
-                <ImageCompareSlider
-                  beforeLabel="【此处放置案例照片 A】"
-                  afterLabel="【此处放置案例照片 B】"
-                  initialPosition={50}
-                />
-              </div>
+      <section className="py-12 md:py-24 px-4 md:px-8" style={{backgroundColor: '#F3F4F6'}}>
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-light text-center mb-3 tracking-wide" style={{color: '#1F1F1F'}}>
+            有没有想过你的脸会是什么样子
+          </h2>
+          <p className="text-sm md:text-base text-center mb-8 md:mb-16 tracking-wide" style={{color: '#6B7280'}}>展望未来</p>
+
+          <div className="mb-8 md:mb-16 mx-auto w-full md:w-4/5 lg:w-3/4">
+            <div className="h-64 md:h-96 lg:h-[575px]">
+              <ImageCompareSlider
+                beforeLabel="【此处放置案例照片 A】"
+                afterLabel="【此处放置案例照片 B】"
+                initialPosition={50}
+              />
             </div>
           </div>
-        </section>
-
-        <section className="w-full overflow-hidden order-1 md:order-2">
-          <div className="w-full flex justify-start items-start">
-            <img
-              src="/Gemini_Generated_Image_scqqizscqqizscqq_(1).png"
-              alt="Aesthetic Transformation"
-              className="w-full h-auto object-cover"
-              style={{ objectPosition: 'top left' }}
-            />
-          </div>
-        </section>
-      </div>
+        </div>
+      </section>
 
       <section className="py-8 md:py-24 px-3 md:px-12" style={{backgroundColor: '#F3F4F6'}}>
         <div className="max-w-6xl mx-auto">
