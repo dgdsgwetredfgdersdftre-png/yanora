@@ -827,7 +827,8 @@ function App() {
           </div>
 
           {/* Mobile layout - new design inspired by reference */}
-          <div className="md:hidden">
+          <div className="md:hidden space-y-6">
+            {/* First case */}
             <div className="bg-white p-6" style={{borderColor: '#B9CBDC', border: '3px solid #B9CBDC'}}>
               {/* Before/After Images */}
               <div className="grid grid-cols-2 gap-3 mb-6">
@@ -867,6 +868,51 @@ function App() {
                   <h3 className="text-lg font-normal mb-3" style={{color: '#1F1F1F'}}>下颌线条优化</h3>
                   <p className="text-xs leading-relaxed" style={{color: '#6B7280'}}>
                     塑造流畅优雅的下颌线条，提升整体面部和谐度
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Second case */}
+            <div className="bg-white p-6" style={{borderColor: '#B9CBDC', border: '3px solid #B9CBDC'}}>
+              {/* Before/After Images */}
+              <div className="grid grid-cols-2 gap-3 mb-6">
+                <div className="aspect-[3/4] overflow-hidden flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
+                  <span className="text-gray-600 text-xs">手术前</span>
+                </div>
+                <div className="aspect-[3/4] overflow-hidden flex items-center justify-center" style={{backgroundColor: '#A0A7B5'}}>
+                  <span className="text-white text-xs">手术后</span>
+                </div>
+              </div>
+
+              {/* Timeline */}
+              <div className="relative mb-8">
+                <div className="absolute left-0 right-0 top-1/2 h-px" style={{backgroundColor: '#D1D5DB', transform: 'translateY(-50%)'}}></div>
+                <div className="relative text-center">
+                  <span className="inline-block px-4 py-1 text-sm font-light" style={{backgroundColor: '#F3F4F6', color: '#6B7280'}}>6 个月</span>
+                </div>
+              </div>
+
+              {/* Features list */}
+              <div className="space-y-6">
+                <div className="text-center">
+                  <h3 className="text-lg font-normal mb-3" style={{color: '#1F1F1F'}}>眼部轮廓精致化</h3>
+                  <p className="text-xs leading-relaxed" style={{color: '#6B7280'}}>
+                    打造深邃迷人的双眼，让眼神更加有神采
+                  </p>
+                </div>
+
+                <div className="text-center">
+                  <h3 className="text-lg font-normal mb-3" style={{color: '#1F1F1F'}}>皮肤紧致提升</h3>
+                  <p className="text-xs leading-relaxed" style={{color: '#6B7280'}}>
+                    改善肌肤松弛问题，恢复年轻紧致状态
+                  </p>
+                </div>
+
+                <div className="text-center">
+                  <h3 className="text-lg font-normal mb-3" style={{color: '#1F1F1F'}}>整体气质提升</h3>
+                  <p className="text-xs leading-relaxed" style={{color: '#6B7280'}}>
+                    细节调整，打造更加协调自然的面部美感
                   </p>
                 </div>
               </div>
