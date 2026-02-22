@@ -995,14 +995,32 @@ function App() {
         </div>
       </section>
 
-      <section className="w-full overflow-hidden" style={{ height: '600px' }}>
-        <div className="w-full h-full flex justify-center items-center" style={{ backgroundColor: '#f5f5f5' }}>
+      <section className="w-full overflow-hidden py-12 md:py-16" style={{ backgroundColor: '#f5f5f5' }}>
+        <div className="w-full flex justify-center items-center mb-8">
           <img
             src="/Gemini_Generated_Image_scqqizscqqizscqq_(1).png"
             alt="Aesthetic Transformation"
-            className="h-full w-auto object-contain"
-            style={{ transform: 'scale(0.25)' }}
+            className="w-auto object-contain"
+            style={{ transform: 'scale(0.25)', maxHeight: '400px' }}
           />
+        </div>
+        <div className="grid grid-cols-4 gap-4 md:gap-8 max-w-6xl mx-auto px-4">
+          <div className="flex flex-col items-center text-center">
+            <div className="text-2xl md:text-3xl font-light mb-2" style={{ color: '#1F1F1F' }}>01</div>
+            <p className="text-xs md:text-sm font-normal" style={{ color: '#6B7280' }}>获取专家面部分析</p>
+          </div>
+          <div className="flex flex-col items-center text-center">
+            <div className="text-2xl md:text-3xl font-light mb-2" style={{ color: '#1F1F1F' }}>02</div>
+            <p className="text-xs md:text-sm font-normal" style={{ color: '#6B7280' }}>你最美的样子</p>
+          </div>
+          <div className="flex flex-col items-center text-center">
+            <div className="text-2xl md:text-3xl font-light mb-2" style={{ color: '#1F1F1F' }}>03</div>
+            <p className="text-xs md:text-sm font-normal" style={{ color: '#6B7280' }}>获取你的专属焕颜方案</p>
+          </div>
+          <div className="flex flex-col items-center text-center">
+            <div className="text-2xl md:text-3xl font-light mb-2" style={{ color: '#1F1F1F' }}>04</div>
+            <p className="text-xs md:text-sm font-normal" style={{ color: '#6B7280' }}>见证显著效果</p>
+          </div>
         </div>
       </section>
 
