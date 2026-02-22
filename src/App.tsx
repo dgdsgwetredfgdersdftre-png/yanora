@@ -995,13 +995,13 @@ function App() {
         </div>
       </section>
 
-      <section className="w-full overflow-hidden">
-        <div className="w-full flex justify-start items-start">
+      <section className="w-full overflow-hidden" style={{ height: '600px' }}>
+        <div className="w-full h-full flex justify-center items-center" style={{ backgroundColor: '#f5f5f5' }}>
           <img
             src="/Gemini_Generated_Image_scqqizscqqizscqq_(1).png"
             alt="Aesthetic Transformation"
-            className="w-full h-auto object-cover"
-            style={{ objectPosition: 'top left' }}
+            className="h-full w-auto object-contain"
+            style={{ transform: 'scale(0.75)' }}
           />
         </div>
       </section>
