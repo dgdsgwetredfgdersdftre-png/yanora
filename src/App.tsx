@@ -795,10 +795,10 @@ function App() {
           </h2>
           <div className="border-2 md:border-4 p-4 md:p-12" style={{borderColor: '#B9CBDC'}}>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 mb-8">
-              <div className="w-48 md:w-56 aspect-[3/4] flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
+              <div className="w-48 md:w-80 aspect-[3/4] flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
                 <span className="text-gray-500 text-xs md:text-sm">手术前</span>
               </div>
-              <div className="w-48 md:w-56 aspect-[3/4] flex items-center justify-center" style={{backgroundColor: '#A0A7B5'}}>
+              <div className="w-48 md:w-80 aspect-[3/4] flex items-center justify-center" style={{backgroundColor: '#A0A7B5'}}>
                 <span className="text-white text-xs md:text-sm">手术后</span>
               </div>
             </div>
