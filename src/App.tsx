@@ -576,7 +576,7 @@ function App() {
       <section className="md:hidden py-8 px-4">
         <div className="w-full">
           <div className="p-3 flex flex-col gap-4 rounded-3xl" style={{border: '4px solid #B9CBDC'}}>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="flex flex-col gap-3">
               <div className="aspect-square">
                 <ImageCompareSlider
                   beforeLabel="【此处放置案例照片 A】"
