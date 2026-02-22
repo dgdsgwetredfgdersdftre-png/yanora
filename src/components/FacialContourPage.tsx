@@ -86,10 +86,7 @@ function FacialContourPage() {
             我们根据不同人种的面部结构和骨架特征，结合个人审美偏好，科学地提供个性化整形解决方案。
           </p>
           <button
-            onClick={() => {
-              const section = document.getElementById('facial-contour-section');
-              section?.scrollIntoView({ behavior: 'smooth' });
-            }}
+            onClick={() => navigate('/booking')}
             className="px-8 py-3 text-sm md:text-base font-light tracking-wide transition-all duration-300 hover:opacity-80"
             style={{
               backgroundColor: '#1C2B3A',
