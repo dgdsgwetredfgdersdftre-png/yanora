@@ -50,7 +50,7 @@ function BookingPage() {
         name: fullName,
         email: formData.email,
         phone: formData.phone,
-        preferred_date: formData.preferred_date,
+        preferred_date: formData.preferred_date || null,
         service_type: formData.service_type,
         message: formData.message,
         user_id: user?.id || null,
