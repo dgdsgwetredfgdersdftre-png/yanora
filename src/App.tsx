@@ -995,35 +995,48 @@ function App() {
         </div>
       </section>
 
-      <section className="w-full relative">
-        <img
-          src="/56315efc544d966bb744e9a52c7de1f4.png"
-          alt="Professional portrait"
-          className="w-full h-auto object-cover"
-        />
+      <section className="w-full relative" style={{backgroundColor: '#F9FAFB'}}>
+        <div className="max-w-7xl mx-auto py-12 md:py-20 px-4">
+          <div className="text-center mb-8 md:mb-16">
+            <h2 className="text-3xl md:text-5xl font-light mb-4 md:mb-6 tracking-wide" style={{color: '#1F2937'}}>
+              你的脸，独一无二的解法
+            </h2>
+            <p className="text-base md:text-xl font-light tracking-wide" style={{color: '#6B7280'}}>
+              基于人种骨架、动态肌肉与心理诉求的六维面诊分析法
+            </p>
+          </div>
+        </div>
 
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="max-w-7xl mx-auto h-full relative px-4">
-            <img
-              src="/Gemini_Generated_Image_lv6nndlv6nndlv6n.png"
-              alt="Analysis 1"
-              className="absolute left-8 top-[15%] w-48 md:w-64 h-auto rounded-lg shadow-2xl float-left-1"
-            />
-            <img
-              src="/Gemini_Generated_Image_pf7kappf7kappf7k.png"
-              alt="Analysis 2"
-              className="absolute left-12 bottom-[20%] w-48 md:w-64 h-auto rounded-lg shadow-2xl float-left-2"
-            />
-            <img
-              src="/Gemini_Generated_Image_a16ssqa16ssqa16s.png"
-              alt="Analysis 3"
-              className="absolute right-8 top-[20%] w-48 md:w-64 h-auto rounded-lg shadow-2xl float-right-1"
-            />
-            <img
-              src="/Gemini_Generated_Image_fv9uk0fv9uk0fv9u.png"
-              alt="Analysis 4"
-              className="absolute right-12 bottom-[15%] w-48 md:w-64 h-auto rounded-lg shadow-2xl float-right-2"
-            />
+        <div className="w-full relative">
+          <img
+            src="/56315efc544d966bb744e9a52c7de1f4.png"
+            alt="Professional portrait"
+            className="w-full h-auto object-cover"
+          />
+
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="max-w-7xl mx-auto h-full relative px-4">
+              <img
+                src="/Gemini_Generated_Image_lv6nndlv6nndlv6n.png"
+                alt="Analysis 1"
+                className="absolute left-8 top-[15%] w-48 md:w-64 h-auto rounded-lg shadow-2xl float-left-1"
+              />
+              <img
+                src="/Gemini_Generated_Image_pf7kappf7kappf7k.png"
+                alt="Analysis 2"
+                className="absolute left-12 bottom-[20%] w-48 md:w-64 h-auto rounded-lg shadow-2xl float-left-2"
+              />
+              <img
+                src="/Gemini_Generated_Image_a16ssqa16ssqa16s.png"
+                alt="Analysis 3"
+                className="absolute right-8 top-[20%] w-48 md:w-64 h-auto rounded-lg shadow-2xl float-right-1"
+              />
+              <img
+                src="/Gemini_Generated_Image_fv9uk0fv9uk0fv9u.png"
+                alt="Analysis 4"
+                className="absolute right-12 bottom-[15%] w-48 md:w-64 h-auto rounded-lg shadow-2xl float-right-2"
+              />
+            </div>
           </div>
         </div>
       </section>
