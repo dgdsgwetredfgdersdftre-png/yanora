@@ -141,7 +141,7 @@ function FacialContourPage() {
                 </div>
 
                 {/* 颧骨标注 - 右侧 */}
-                <div className="absolute" style={{top: '36%', right: '15%'}}>
+                <div className="absolute" style={{top: '31%', right: '15%'}}>
                   <div className="relative">
                     {/* 点 - 桌面端显示 */}
                     <div className="hidden md:block absolute w-2.5 h-2.5 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A', right: '-5px', top: '-5px'}}></div>
