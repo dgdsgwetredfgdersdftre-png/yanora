@@ -511,12 +511,104 @@ function FacialContourPage() {
               聚焦于面部大框架的调整，即"骨相"与轮廓线
             </p>
             <div className="flex justify-center mb-16">
-              <div className="w-full md:w-2/3 lg:w-1/2">
+              <div className="w-full md:w-2/3 lg:w-1/2 relative">
                 <img
                   src="/Gemini_Generated_Image_qvpx6jqvpx6jqvpx.png"
                   alt="面部轮廓示例"
                   className="w-full h-auto object-contain"
                 />
+
+                {/* 额头标注 */}
+                <div className="absolute" style={{top: '12%', left: '50%'}}>
+                  <div className="relative">
+                    {/* 点 */}
+                    <div className="absolute w-2 h-2 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A'}}></div>
+                    {/* 线条 */}
+                    <div className="absolute w-16 h-0.5" style={{backgroundColor: '#1C2B3A', top: '3px', left: '8px'}}></div>
+                    {/* 浮动文字框 */}
+                    <div
+                      className="absolute px-4 py-2 bg-white border shadow-lg"
+                      style={{
+                        borderColor: '#1C2B3A',
+                        left: '76px',
+                        top: '-12px',
+                        minWidth: '80px',
+                        animation: 'floatUpDown 3s ease-in-out infinite'
+                      }}
+                    >
+                      <p className="text-sm font-light whitespace-nowrap" style={{color: '#1F1F1F'}}>额头</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 颧骨标注 */}
+                <div className="absolute" style={{top: '42%', right: '15%'}}>
+                  <div className="relative">
+                    {/* 点 */}
+                    <div className="absolute w-2 h-2 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A'}}></div>
+                    {/* 线条 */}
+                    <div className="absolute w-16 h-0.5" style={{backgroundColor: '#1C2B3A', top: '3px', left: '8px'}}></div>
+                    {/* 浮动文字框 */}
+                    <div
+                      className="absolute px-4 py-2 bg-white border shadow-lg"
+                      style={{
+                        borderColor: '#1C2B3A',
+                        left: '76px',
+                        top: '-12px',
+                        minWidth: '80px',
+                        animation: 'floatUpDown 3s ease-in-out infinite 0.5s'
+                      }}
+                    >
+                      <p className="text-sm font-light whitespace-nowrap" style={{color: '#1F1F1F'}}>颧骨</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 下颌线标注 */}
+                <div className="absolute" style={{top: '68%', right: '12%'}}>
+                  <div className="relative">
+                    {/* 点 */}
+                    <div className="absolute w-2 h-2 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A'}}></div>
+                    {/* 线条 */}
+                    <div className="absolute w-16 h-0.5" style={{backgroundColor: '#1C2B3A', top: '3px', left: '8px'}}></div>
+                    {/* 浮动文字框 */}
+                    <div
+                      className="absolute px-4 py-2 bg-white border shadow-lg"
+                      style={{
+                        borderColor: '#1C2B3A',
+                        left: '76px',
+                        top: '-12px',
+                        minWidth: '80px',
+                        animation: 'floatUpDown 3s ease-in-out infinite 1s'
+                      }}
+                    >
+                      <p className="text-sm font-light whitespace-nowrap" style={{color: '#1F1F1F'}}>下颌线</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 下巴标注 */}
+                <div className="absolute" style={{top: '85%', left: '50%'}}>
+                  <div className="relative">
+                    {/* 点 */}
+                    <div className="absolute w-2 h-2 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A'}}></div>
+                    {/* 线条 */}
+                    <div className="absolute w-16 h-0.5" style={{backgroundColor: '#1C2B3A', top: '3px', left: '8px'}}></div>
+                    {/* 浮动文字框 */}
+                    <div
+                      className="absolute px-4 py-2 bg-white border shadow-lg"
+                      style={{
+                        borderColor: '#1C2B3A',
+                        left: '76px',
+                        top: '-12px',
+                        minWidth: '80px',
+                        animation: 'floatUpDown 3s ease-in-out infinite 1.5s'
+                      }}
+                    >
+                      <p className="text-sm font-light whitespace-nowrap" style={{color: '#1F1F1F'}}>下巴</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
