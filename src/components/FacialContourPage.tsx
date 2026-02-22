@@ -103,12 +103,6 @@ function FacialContourPage() {
       <section id="facial-contour-section" className="py-20 md:py-28 px-6 md:px-12 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16 text-center">
-            <h2 className="text-2xl md:text-3xl font-light mb-4 tracking-wide" style={{color: '#1F1F1F'}}>
-              面部轮廓板块
-            </h2>
-            <p className="text-sm md:text-base font-light mb-12" style={{color: '#6B7280'}}>
-              聚焦于面部大框架的调整，即"骨相"与轮廓线
-            </p>
             <div className="flex justify-center mb-16">
               <div className="w-full md:w-2/3 lg:w-1/2 relative">
                 <img
