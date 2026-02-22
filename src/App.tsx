@@ -995,12 +995,37 @@ function App() {
         </div>
       </section>
 
-      <section className="w-full">
+      <section className="w-full relative">
         <img
           src="/56315efc544d966bb744e9a52c7de1f4.png"
           alt="Professional portrait"
           className="w-full h-auto object-cover"
         />
+
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="max-w-7xl mx-auto h-full relative px-4">
+            <img
+              src="/Gemini_Generated_Image_lv6nndlv6nndlv6n.png"
+              alt="Analysis 1"
+              className="absolute left-8 top-[15%] w-48 md:w-64 h-auto rounded-lg shadow-2xl float-left-1"
+            />
+            <img
+              src="/Gemini_Generated_Image_pf7kappf7kappf7k.png"
+              alt="Analysis 2"
+              className="absolute left-12 bottom-[20%] w-48 md:w-64 h-auto rounded-lg shadow-2xl float-left-2"
+            />
+            <img
+              src="/Gemini_Generated_Image_a16ssqa16ssqa16s.png"
+              alt="Analysis 3"
+              className="absolute right-8 top-[20%] w-48 md:w-64 h-auto rounded-lg shadow-2xl float-right-1"
+            />
+            <img
+              src="/Gemini_Generated_Image_fv9uk0fv9uk0fv9u.png"
+              alt="Analysis 4"
+              className="absolute right-12 bottom-[15%] w-48 md:w-64 h-auto rounded-lg shadow-2xl float-right-2"
+            />
+          </div>
+        </div>
       </section>
 
       <section className="py-12 md:py-24 px-4 md:px-8" style={{backgroundColor: '#F3F4F6'}}>
