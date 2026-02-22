@@ -31,7 +31,7 @@ function BodySculptingPage() {
         </div>
       </nav>
 
-      <section className="py-24 px-12">
+      <section className="py-24 px-4">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-4xl font-light mb-6 tracking-wide" style={{color: '#1F1F1F'}}>
             身体塑形
@@ -40,7 +40,7 @@ function BodySculptingPage() {
             科学塑形方案，打造理想身材曲线
           </p>
 
-          <div className="bg-white p-6 mb-16" style={{border: '2px solid red'}}>
+          <div className="bg-white p-1 mb-16" style={{border: '2px solid red'}}>
             {/* Desktop view - 3 images side by side */}
             <div className="hidden md:flex items-end justify-center gap-0">
               <img
