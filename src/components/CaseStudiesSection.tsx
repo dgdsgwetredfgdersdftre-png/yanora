@@ -37,7 +37,7 @@ function CaseStudiesSection() {
 
   if (loading) {
     return (
-      <section className="py-24 px-12 bg-white">
+      <section className="py-12 md:py-24 px-4 md:px-12 bg-white">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-sm" style={{color: '#6B7280'}}>加载中...</p>
         </div>
@@ -47,16 +47,16 @@ function CaseStudiesSection() {
 
   if (cases.length === 0) {
     return (
-      <section className="py-24 px-12 bg-white">
+      <section className="py-12 md:py-24 px-4 md:px-12 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-light text-center mb-4 tracking-wide" style={{color: '#1F1F1F'}}>
+          <h2 className="text-2xl md:text-3xl font-light text-center mb-4 tracking-wide" style={{color: '#1F1F1F'}}>
             他们通过 YANOR A 找回的自信
           </h2>
-          <div className="w-20 h-px mx-auto mb-20" style={{backgroundColor: '#A0A7B5'}}></div>
+          <div className="w-20 h-px mx-auto mb-8 md:mb-20" style={{backgroundColor: '#A0A7B5'}}></div>
 
-          <div className="space-y-8">
+          <div className="space-y-4 md:space-y-8">
             {[1, 2, 3, 4].map((row) => (
-              <div key={row} className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              <div key={row} className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8">
                 {[1, 2].map((col) => (
                   <div key={col} className="md:col-span-2 bg-white overflow-hidden">
                     <div className="grid grid-cols-2 gap-0">
@@ -89,16 +89,16 @@ function CaseStudiesSection() {
   }
 
   return (
-    <section className="py-24 px-12 bg-white">
+    <section className="py-12 md:py-24 px-4 md:px-12 bg-white">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-light text-center mb-4 tracking-wide" style={{color: '#1F1F1F'}}>
+        <h2 className="text-2xl md:text-3xl font-light text-center mb-4 tracking-wide" style={{color: '#1F1F1F'}}>
           他们通过 YANOR A 找回的自信
         </h2>
-        <div className="w-20 h-px mx-auto mb-20" style={{backgroundColor: '#A0A7B5'}}></div>
+        <div className="w-20 h-px mx-auto mb-8 md:mb-20" style={{backgroundColor: '#A0A7B5'}}></div>
 
-        <div className="space-y-8">
+        <div className="space-y-4 md:space-y-8">
           {rows.map((row, rowIndex) => (
-            <div key={rowIndex} className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div key={rowIndex} className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8">
               {row.map((caseStudy) => (
                 <div key={caseStudy.id} className="md:col-span-2 bg-white overflow-hidden shadow-sm hover:shadow-md transition">
                   <div className="grid grid-cols-2 gap-0">
@@ -123,7 +123,7 @@ function CaseStudiesSection() {
                       </div>
                     </div>
                   </div>
-                  <div className="p-4 border-t" style={{borderColor: '#E5E7EB'}}>
+                  <div className="p-3 md:p-4 border-t" style={{borderColor: '#E5E7EB'}}>
                     <h3 className="text-sm font-normal" style={{color: '#1F1F1F'}}>{caseStudy.title}</h3>
                     <p className="text-xs mt-1" style={{color: '#6B7280'}}>{caseStudy.category}</p>
                   </div>
