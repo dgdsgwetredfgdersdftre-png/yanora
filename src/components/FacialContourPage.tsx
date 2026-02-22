@@ -78,7 +78,7 @@ function FacialContourPage() {
     <div className="min-h-screen bg-white">
       <Navbar />
       {/* Hero Section - Core Value Statement */}
-      <section className="py-24 md:py-32 px-6 md:px-12" style={{backgroundColor: '#FAFAFA'}}>
+      <section className="py-24 md:py-32 px-6 md:px-12 bg-white md:bg-[#FAFAFA]">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl md:text-5xl font-light mb-8 leading-relaxed tracking-wide" style={{color: '#1F1F1F'}}>
             面部轮廓重塑
@@ -100,7 +100,7 @@ function FacialContourPage() {
       </section>
 
       {/* Facial Contour Section - Bone & Soft Tissue */}
-      <section id="facial-contour-section" className="py-20 md:py-28 px-6 md:px-12">
+      <section id="facial-contour-section" className="py-20 md:py-28 px-6 md:px-12 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16 text-center">
             <h2 className="text-2xl md:text-3xl font-light mb-4 tracking-wide" style={{color: '#1F1F1F'}}>
@@ -290,7 +290,7 @@ function FacialContourPage() {
       </section>
 
       {/* Facial Features Section */}
-      <section className="py-20 md:py-28 px-6 md:px-12" style={{backgroundColor: '#FAFAFA'}}>
+      <section className="py-20 md:py-28 px-6 md:px-12 bg-white md:bg-[#FAFAFA]">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16 text-center">
             <h2 className="text-2xl md:text-3xl font-light mb-4 tracking-wide" style={{color: '#1F1F1F'}}>
@@ -372,7 +372,7 @@ function FacialContourPage() {
       </section>
 
       {/* Case Studies Section */}
-      <section className="py-20 md:py-28 px-12 md:px-24">
+      <section className="py-20 md:py-28 px-12 md:px-24 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16 text-center">
             <h2 className="text-2xl md:text-3xl font-light mb-4 tracking-wide" style={{color: '#1F1F1F'}}>
