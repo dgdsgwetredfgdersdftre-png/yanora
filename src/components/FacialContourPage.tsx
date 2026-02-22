@@ -518,20 +518,20 @@ function FacialContourPage() {
                   className="w-full h-auto object-contain"
                 />
 
-                {/* 额头标注 */}
-                <div className="absolute" style={{top: '12%', left: '50%'}}>
+                {/* 额头标注 - 左侧 */}
+                <div className="absolute" style={{top: '14%', left: '28%'}}>
                   <div className="relative">
                     {/* 点 */}
-                    <div className="absolute w-2 h-2 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A'}}></div>
+                    <div className="absolute w-2.5 h-2.5 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A', left: '-5px', top: '-5px'}}></div>
                     {/* 线条 */}
-                    <div className="absolute w-16 h-0.5" style={{backgroundColor: '#1C2B3A', top: '3px', left: '8px'}}></div>
+                    <div className="absolute w-20 h-0.5" style={{backgroundColor: '#1C2B3A', top: '-1px', right: '0'}}></div>
                     {/* 浮动文字框 */}
                     <div
                       className="absolute px-4 py-2 bg-white border shadow-lg"
                       style={{
                         borderColor: '#1C2B3A',
-                        left: '76px',
-                        top: '-12px',
+                        right: '84px',
+                        top: '-16px',
                         minWidth: '80px',
                         animation: 'floatUpDown 3s ease-in-out infinite'
                       }}
@@ -541,20 +541,20 @@ function FacialContourPage() {
                   </div>
                 </div>
 
-                {/* 颧骨标注 */}
-                <div className="absolute" style={{top: '42%', right: '15%'}}>
+                {/* 颧骨标注 - 右侧 */}
+                <div className="absolute" style={{top: '48%', right: '20%'}}>
                   <div className="relative">
                     {/* 点 */}
-                    <div className="absolute w-2 h-2 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A'}}></div>
+                    <div className="absolute w-2.5 h-2.5 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A', right: '-5px', top: '-5px'}}></div>
                     {/* 线条 */}
-                    <div className="absolute w-16 h-0.5" style={{backgroundColor: '#1C2B3A', top: '3px', left: '8px'}}></div>
+                    <div className="absolute w-20 h-0.5" style={{backgroundColor: '#1C2B3A', top: '-1px', left: '0'}}></div>
                     {/* 浮动文字框 */}
                     <div
                       className="absolute px-4 py-2 bg-white border shadow-lg"
                       style={{
                         borderColor: '#1C2B3A',
-                        left: '76px',
-                        top: '-12px',
+                        left: '84px',
+                        top: '-16px',
                         minWidth: '80px',
                         animation: 'floatUpDown 3s ease-in-out infinite 0.5s'
                       }}
@@ -564,21 +564,21 @@ function FacialContourPage() {
                   </div>
                 </div>
 
-                {/* 下颌线标注 */}
-                <div className="absolute" style={{top: '68%', right: '12%'}}>
+                {/* 下颌线标注 - 左侧 */}
+                <div className="absolute" style={{top: '72%', left: '25%'}}>
                   <div className="relative">
                     {/* 点 */}
-                    <div className="absolute w-2 h-2 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A'}}></div>
+                    <div className="absolute w-2.5 h-2.5 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A', left: '-5px', top: '-5px'}}></div>
                     {/* 线条 */}
-                    <div className="absolute w-16 h-0.5" style={{backgroundColor: '#1C2B3A', top: '3px', left: '8px'}}></div>
+                    <div className="absolute w-20 h-0.5" style={{backgroundColor: '#1C2B3A', top: '-1px', right: '0'}}></div>
                     {/* 浮动文字框 */}
                     <div
                       className="absolute px-4 py-2 bg-white border shadow-lg"
                       style={{
                         borderColor: '#1C2B3A',
-                        left: '76px',
-                        top: '-12px',
-                        minWidth: '80px',
+                        right: '84px',
+                        top: '-16px',
+                        minWidth: '90px',
                         animation: 'floatUpDown 3s ease-in-out infinite 1s'
                       }}
                     >
@@ -587,20 +587,20 @@ function FacialContourPage() {
                   </div>
                 </div>
 
-                {/* 下巴标注 */}
-                <div className="absolute" style={{top: '85%', left: '50%'}}>
+                {/* 下巴标注 - 右侧 */}
+                <div className="absolute" style={{top: '90%', right: '35%'}}>
                   <div className="relative">
                     {/* 点 */}
-                    <div className="absolute w-2 h-2 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A'}}></div>
+                    <div className="absolute w-2.5 h-2.5 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A', right: '-5px', top: '-5px'}}></div>
                     {/* 线条 */}
-                    <div className="absolute w-16 h-0.5" style={{backgroundColor: '#1C2B3A', top: '3px', left: '8px'}}></div>
+                    <div className="absolute w-20 h-0.5" style={{backgroundColor: '#1C2B3A', top: '-1px', left: '0'}}></div>
                     {/* 浮动文字框 */}
                     <div
                       className="absolute px-4 py-2 bg-white border shadow-lg"
                       style={{
                         borderColor: '#1C2B3A',
-                        left: '76px',
-                        top: '-12px',
+                        left: '84px',
+                        top: '-16px',
                         minWidth: '80px',
                         animation: 'floatUpDown 3s ease-in-out infinite 1.5s'
                       }}
