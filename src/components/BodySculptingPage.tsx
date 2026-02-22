@@ -46,7 +46,7 @@ function BodySculptingPage() {
               <img
                 src="/Gemini_Generated_Image_94iwds94iwds94iw.png"
                 alt="身体塑形示例1"
-                className="h-[400px] object-contain"
+                className="h-[500px] object-contain"
                 style={{
                   filter: 'brightness(1.1) contrast(1.05)',
                   mixBlendMode: 'darken',
@@ -56,7 +56,7 @@ function BodySculptingPage() {
               <img
                 src="/Gemini_Generated_Image_iubeodiubeodiube.png"
                 alt="身体塑形示例2"
-                className="h-[400px] object-contain"
+                className="h-[500px] object-contain"
                 style={{
                   filter: 'brightness(1.1) contrast(1.05)',
                   mixBlendMode: 'darken',
@@ -66,7 +66,7 @@ function BodySculptingPage() {
               <img
                 src="/Gemini_Generated_Image_u1lac1u1lac1u1la.png"
                 alt="身体塑形示例3"
-                className="h-[400px] object-contain"
+                className="h-[500px] object-contain"
                 style={{
                   filter: 'brightness(1.1) contrast(1.05)',
                   mixBlendMode: 'darken',
