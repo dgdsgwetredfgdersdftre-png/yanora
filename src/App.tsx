@@ -671,27 +671,27 @@ function App() {
         </div>
       </section>
 
-      <section className="py-12 md:py-24 px-6 md:px-12 bg-white">
+      <section className="py-8 md:py-24 px-6 md:px-12 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-light text-center mb-6 tracking-wide" style={{color: '#1F1F1F'}}>获取你的手术计划</h2>
-          <p className="text-sm text-center mb-12 md:mb-16 tracking-wide" style={{color: '#6B7280'}}>
+          <h2 className="text-2xl md:text-3xl font-light text-center mb-3 tracking-wide" style={{color: '#1F1F1F'}}>获取你的手术计划</h2>
+          <p className="text-sm text-center mb-8 md:mb-16 tracking-wide" style={{color: '#6B7280'}}>
             了解你的面部特征，立即开始行之有效的行动来提升你的容颜
           </p>
 
           {/* Mobile layout - compact version */}
           <div className="md:hidden">
-            <div className="flex flex-col gap-6 mb-10">
-              <div className="flex justify-center gap-4">
-                <div className="overflow-hidden relative w-36" style={{backgroundColor: '#F3F4F6'}}>
-                  <div className="h-40 flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
+            <div className="flex flex-col gap-6 mb-8">
+              <div className="flex justify-center gap-6">
+                <div className="overflow-hidden relative w-40" style={{backgroundColor: '#F3F4F6'}}>
+                  <div className="h-36 flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
                     <span className="text-gray-500 text-xs">术前照片 (Before)</span>
                   </div>
                   <div className="absolute bottom-2 left-2 bg-white px-2 py-0.5">
                     <span className="text-xs text-gray-600">BEFORE</span>
                   </div>
                 </div>
-                <div className="overflow-hidden relative w-36" style={{backgroundColor: '#F3F4F6'}}>
-                  <div className="h-40 flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
+                <div className="overflow-hidden relative w-40" style={{backgroundColor: '#F3F4F6'}}>
+                  <div className="h-36 flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
                     <span className="text-gray-500 text-xs">术后照片 (After)</span>
                   </div>
                   <div className="absolute bottom-2 left-2 bg-white px-2 py-0.5">
@@ -700,14 +700,14 @@ function App() {
                 </div>
               </div>
 
-              <div className="max-w-md mx-auto space-y-5">
+              <div className="max-w-md mx-auto space-y-3">
                 {[
                   { num: '01', title: '获取专家面部分析' },
                   { num: '02', title: '你最美的样子' },
                   { num: '03', title: '获取你的专属焕颜方案' },
                   { num: '04', title: '见证显著效果' }
                 ].map((item) => (
-                  <div key={item.num} className="flex items-center gap-3 pb-5 border-b border-gray-200 last:border-0">
+                  <div key={item.num} className="flex items-center gap-3 pb-3 border-b border-gray-200 last:border-0">
                     <div className="text-base font-light flex-shrink-0" style={{color: '#A0A7B5', width: '36px'}}>{item.num}</div>
                     <h3 className="text-sm font-normal tracking-wide leading-snug" style={{color: '#1F1F1F'}}>{item.title}</h3>
                   </div>
