@@ -83,8 +83,8 @@ function FacialContourPage() {
           <h1 className="text-3xl md:text-5xl font-light mb-6 leading-relaxed tracking-wide" style={{color: '#1F1F1F'}}>
             面部轮廓重塑
           </h1>
-          <p className="text-base md:text-lg font-light leading-relaxed mb-8" style={{color: '#4B5563'}}>
-            我们根据不同人种的面部结构和骨架特征，结合个人审美偏好，科学地提供个性化整形解决方案。
+          <p className="text-sm md:text-base font-light leading-relaxed mb-8 max-w-2xl mx-auto" style={{color: '#4B5563'}}>
+            我们根据不同人种的面部结构和骨架特征，<br />结合个人审美偏好，科学地提供个性化整形解决方案。
           </p>
           <button
             onClick={() => navigate('/booking')}
