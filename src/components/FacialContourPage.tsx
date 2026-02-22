@@ -1,15 +1,82 @@
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState } from 'react';
 
 function FacialContourPage() {
   const navigate = useNavigate();
+  const [activeFeature, setActiveFeature] = useState<'nose' | 'eyes' | 'lips' | 'eyebrows' | 'ears'>('nose');
+
+  const noseTypes = [
+    { id: 1, name: '直鼻', description: '气质干练', image: '🖼️' },
+    { id: 2, name: '微翘鼻', description: '柔和甜美', image: '🖼️' },
+    { id: 3, name: '盒鼻', description: '混血立体', image: '🖼️' },
+    { id: 4, name: '水滴鼻', description: '自然圆润', image: '🖼️' },
+  ];
+
+  const eyeTypes = [
+    { id: 1, name: '开扇双眼皮', description: '妩媚动人', image: '🖼️' },
+    { id: 2, name: '平行双眼皮', description: '清纯自然', image: '🖼️' },
+    { id: 3, name: '新月型', description: '甜美温柔', image: '🖼️' },
+  ];
+
+  const lipTypes = [
+    { id: 1, name: 'M唇', description: '性感迷人', image: '🖼️' },
+    { id: 2, name: '微笑唇', description: '亲和友善', image: '🖼️' },
+    { id: 3, name: '饱满丰唇', description: '丰盈立体', image: '🖼️' },
+  ];
+
+  const eyebrowTypes = [
+    { id: 1, name: '欧式挑眉', description: '高级精致', image: '🖼️' },
+    { id: 2, name: '平直眉', description: '温柔大气', image: '🖼️' },
+    { id: 3, name: '弯月眉', description: '柔和优雅', image: '🖼️' },
+  ];
+
+  const earTypes = [
+    { id: 1, name: '贴发耳', description: '精灵耳矫正', image: '🖼️' },
+    { id: 2, name: '正常耳廓', description: '杯状耳矫正', image: '🖼️' },
+  ];
+
+  const getCurrentTypes = () => {
+    switch (activeFeature) {
+      case 'nose': return noseTypes;
+      case 'eyes': return eyeTypes;
+      case 'lips': return lipTypes;
+      case 'eyebrows': return eyebrowTypes;
+      case 'ears': return earTypes;
+      default: return noseTypes;
+    }
+  };
+
+  const cases = [
+    {
+      id: 1,
+      parts: '颧骨 + 下巴',
+      description: '利用颧骨内推和颏成型术式改善面部轮廓流畅度，打造柔和的面部线条',
+      before: '🖼️',
+      after: '🖼️'
+    },
+    {
+      id: 2,
+      parts: '鼻子 + 眼睛',
+      description: '综合鼻综合和双眼皮手术，提升五官精致度与面部协调性',
+      before: '🖼️',
+      after: '🖼️'
+    },
+    {
+      id: 3,
+      parts: '下颌线',
+      description: '通过下颌角截骨改善方形脸，塑造流畅的下颌线条',
+      before: '🖼️',
+      after: '🖼️'
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-white">
       <nav className="sticky top-0 bg-white z-50 py-6 border-b" style={{borderColor: '#E5E7EB'}}>
-        <div className="max-w-7xl mx-auto px-12 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="text-xl font-light tracking-widest" style={{color: '#1F1F1F'}}>AESTHETIC</span>
+            <span className="text-xl font-light tracking-widest" style={{color: '#1F1F1F'}}>YANORA</span>
           </div>
           <button
             onClick={() => navigate('/')}
@@ -24,70 +91,216 @@ function FacialContourPage() {
         </div>
       </nav>
 
-      <section className="py-24 px-12">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl font-light mb-6 tracking-wide" style={{color: '#1F1F1F'}}>
-            面部轮廓
+      {/* Hero Section - Core Value Statement */}
+      <section className="py-24 md:py-32 px-6 md:px-12" style={{backgroundColor: '#FAFAFA'}}>
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-3xl md:text-5xl font-light mb-8 leading-relaxed tracking-wide" style={{color: '#1F1F1F'}}>
+            面部轮廓重塑
           </h1>
-          <p className="text-lg mb-12 leading-relaxed" style={{color: '#6B7280'}}>
-            通过专业的面部轮廓设计，打造立体自然的面部线条
+          <p className="text-base md:text-lg font-light leading-relaxed" style={{color: '#4B5563'}}>
+            我们根据不同人种的面部结构和骨架特征，结合个人审美偏好，科学地提供个性化整形解决方案。
           </p>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-            <div className="space-y-6">
-              <h2 className="text-2xl font-light" style={{color: '#1F1F1F'}}>服务项目</h2>
-              <ul className="space-y-4 text-base" style={{color: '#4B5563'}}>
-                <li className="flex items-start gap-3">
-                  <span className="mt-1">•</span>
-                  <span>下颌角整形 - 打造流畅的面部线条</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-1">•</span>
-                  <span>颧骨整形 - 优化面部中部轮廓</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-1">•</span>
-                  <span>下巴整形 - 改善面部比例</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-1">•</span>
-                  <span>脂肪填充 - 增加面部饱满度</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-gray-100 aspect-[4/3] flex items-center justify-center">
-              <span className="text-gray-400">项目展示图片</span>
-            </div>
+      {/* Facial Contour Section - Bone & Soft Tissue */}
+      <section className="py-20 md:py-28 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16">
+            <h2 className="text-2xl md:text-3xl font-light mb-4 tracking-wide" style={{color: '#1F1F1F'}}>
+              面部轮廓板块
+            </h2>
+            <p className="text-sm md:text-base font-light" style={{color: '#6B7280'}}>
+              聚焦于面部大框架的调整，即"骨相"与轮廓线
+            </p>
           </div>
 
-          <div className="border-t pt-12" style={{borderColor: '#E5E7EB'}}>
-            <h2 className="text-2xl font-light mb-8" style={{color: '#1F1F1F'}}>为什么选择我们</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="p-6" style={{backgroundColor: '#F3F4F6'}}>
-                <h3 className="text-lg font-normal mb-3" style={{color: '#1F1F1F'}}>专业团队</h3>
-                <p className="text-sm" style={{color: '#6B7280'}}>拥有丰富经验的专业医师团队</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            {[
+              { icon: '□', title: '额头/眉骨', subtitle: '丰额头、眉弓抬高' },
+              { icon: '□', title: '颧骨', subtitle: '颧骨内推/降低' },
+              { icon: '□', title: '下颌线', subtitle: '下颌角截骨、去咬肌' },
+              { icon: '□', title: '下巴', subtitle: '颏成型、假体隆颏' },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="text-center p-8 md:p-10 border transition-all duration-300"
+                style={{borderColor: '#E5E7EB'}}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = '#1C2B3A';
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = '#E5E7EB';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
+              >
+                <div className="text-5xl mb-6" style={{color: '#1C2B3A'}}>{item.icon}</div>
+                <h3 className="text-base md:text-lg font-normal mb-2" style={{color: '#1F1F1F'}}>
+                  {item.title}
+                </h3>
+                <p className="text-xs md:text-sm font-light" style={{color: '#6B7280'}}>
+                  {item.subtitle}
+                </p>
               </div>
-              <div className="p-6" style={{backgroundColor: '#F3F4F6'}}>
-                <h3 className="text-lg font-normal mb-3" style={{color: '#1F1F1F'}}>个性化方案</h3>
-                <p className="text-sm" style={{color: '#6B7280'}}>根据每位客户的特点定制专属方案</p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Facial Features Section */}
+      <section className="py-20 md:py-28 px-6 md:px-12" style={{backgroundColor: '#FAFAFA'}}>
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16">
+            <h2 className="text-2xl md:text-3xl font-light mb-4 tracking-wide" style={{color: '#1F1F1F'}}>
+              五官精雕板块
+            </h2>
+            <p className="text-sm md:text-base font-light" style={{color: '#6B7280'}}>
+              聚焦于五官局部的精细化调整
+            </p>
+          </div>
+
+          {/* Feature Tabs */}
+          <div className="flex flex-wrap gap-3 md:gap-4 mb-12 justify-center">
+            {[
+              { key: 'nose' as const, label: '鼻子' },
+              { key: 'eyes' as const, label: '眼睛' },
+              { key: 'lips' as const, label: '嘴巴' },
+              { key: 'eyebrows' as const, label: '眉毛' },
+              { key: 'ears' as const, label: '耳朵' },
+            ].map((feature) => (
+              <button
+                key={feature.key}
+                onClick={() => setActiveFeature(feature.key)}
+                className="px-8 md:px-10 py-3 md:py-4 text-sm md:text-base transition-all duration-300 border"
+                style={{
+                  backgroundColor: activeFeature === feature.key ? '#1C2B3A' : 'white',
+                  color: activeFeature === feature.key ? 'white' : '#6B7280',
+                  borderColor: activeFeature === feature.key ? '#1C2B3A' : '#D1D5DB',
+                }}
+                onMouseEnter={(e) => {
+                  if (activeFeature !== feature.key) {
+                    e.currentTarget.style.borderColor = '#1C2B3A';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (activeFeature !== feature.key) {
+                    e.currentTarget.style.borderColor = '#D1D5DB';
+                  }
+                }}
+              >
+                {feature.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Feature Types Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {getCurrentTypes().map((type) => (
+              <div
+                key={type.id}
+                className="bg-white border transition-all duration-300"
+                style={{borderColor: '#E5E7EB'}}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'scale(1.02)';
+                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
+              >
+                <div
+                  className="aspect-square flex items-center justify-center text-6xl"
+                  style={{backgroundColor: '#F9FAFB'}}
+                >
+                  {type.image}
+                </div>
+                <div className="p-6 text-center">
+                  <h3 className="text-base md:text-lg font-normal mb-2" style={{color: '#1F1F1F'}}>
+                    {type.name}
+                  </h3>
+                  <p className="text-xs md:text-sm font-light" style={{color: '#6B7280'}}>
+                    {type.description}
+                  </p>
+                </div>
               </div>
-              <div className="p-6" style={{backgroundColor: '#F3F4F6'}}>
-                <h3 className="text-lg font-normal mb-3" style={{color: '#1F1F1F'}}>安全保障</h3>
-                <p className="text-sm" style={{color: '#6B7280'}}>严格的安全标准和完善的术后跟踪</p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Case Studies Section */}
+      <section className="py-20 md:py-28 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16 text-center">
+            <h2 className="text-2xl md:text-3xl font-light mb-4 tracking-wide" style={{color: '#1F1F1F'}}>
+              真实案例
+            </h2>
+            <p className="text-sm md:text-base font-light" style={{color: '#6B7280'}}>
+              见证专业技术带来的美丽蜕变
+            </p>
+          </div>
+
+          <div className="space-y-16">
+            {cases.map((caseItem, index) => (
+              <div
+                key={caseItem.id}
+                className="border-b pb-16"
+                style={{borderColor: index === cases.length - 1 ? 'transparent' : '#E5E7EB'}}
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                  <div className={index % 2 === 0 ? 'order-1' : 'order-1 lg:order-2'}>
+                    <div className="inline-block px-4 py-2 mb-6 text-xs tracking-widest border" style={{color: '#1C2B3A', borderColor: '#1C2B3A'}}>
+                      {caseItem.parts}
+                    </div>
+                    <p className="text-base md:text-lg font-light leading-relaxed mb-8" style={{color: '#4B5563'}}>
+                      {caseItem.description}
+                    </p>
+                  </div>
+
+                  <div className={index % 2 === 0 ? 'order-2' : 'order-2 lg:order-1'}>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <p className="text-xs mb-3 tracking-wider" style={{color: '#6B7280'}}>术前</p>
+                        <div
+                          className="aspect-[3/4] flex items-center justify-center text-6xl"
+                          style={{backgroundColor: '#F9FAFB'}}
+                        >
+                          {caseItem.before}
+                        </div>
+                      </div>
+                      <div>
+                        <p className="text-xs mb-3 tracking-wider" style={{color: '#6B7280'}}>术后</p>
+                        <div
+                          className="aspect-[3/4] flex items-center justify-center text-6xl"
+                          style={{backgroundColor: '#F9FAFB'}}
+                        >
+                          {caseItem.after}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
 
           <div className="mt-16 text-center">
             <button
               onClick={() => navigate('/booking')}
-              className="px-12 py-3 text-white text-sm transition tracking-wider"
+              className="px-12 md:px-16 py-4 text-white text-sm md:text-base transition tracking-wider"
               style={{backgroundColor: '#1C2B3A'}}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#101D29'}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#1C2B3A'}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#101D29';
+                e.currentTarget.style.transform = 'scale(1.02)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#1C2B3A';
+                e.currentTarget.style.transform = 'scale(1)';
+              }}
             >
-              立即预约咨询
+              预约专属咨询
             </button>
           </div>
         </div>
