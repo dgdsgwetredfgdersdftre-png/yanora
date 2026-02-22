@@ -107,7 +107,7 @@ function FacialContourPage() {
                 />
 
                 {/* 额头标注 - 左侧 */}
-                <div className="absolute" style={{top: '18%', left: '28%'}}>
+                <div className="absolute" style={{top: '18%', left: '18%'}}>
                   <div className="relative">
                     {/* 点 - 桌面端显示 */}
                     <div className="hidden md:block absolute w-2.5 h-2.5 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A', left: '-5px', top: '-5px'}}></div>
@@ -141,7 +141,7 @@ function FacialContourPage() {
                 </div>
 
                 {/* 颧骨标注 - 右侧 */}
-                <div className="absolute" style={{top: '36%', right: '20%'}}>
+                <div className="absolute" style={{top: '36%', right: '15%'}}>
                   <div className="relative">
                     {/* 点 - 桌面端显示 */}
                     <div className="hidden md:block absolute w-2.5 h-2.5 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A', right: '-5px', top: '-5px'}}></div>
@@ -175,7 +175,7 @@ function FacialContourPage() {
                 </div>
 
                 {/* 下巴标注 - 左侧 */}
-                <div className="absolute" style={{top: '56%', left: '25%'}}>
+                <div className="absolute" style={{top: '56%', left: '17%'}}>
                   <div className="relative">
                     {/* 点 - 桌面端显示 */}
                     <div className="hidden md:block absolute w-2.5 h-2.5 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A', left: '-5px', top: '-5px'}}></div>
@@ -209,7 +209,7 @@ function FacialContourPage() {
                 </div>
 
                 {/* 下颌线标注 - 右侧 */}
-                <div className="absolute" style={{top: '50%', right: '35%'}}>
+                <div className="absolute" style={{top: '50%', right: '15%'}}>
                   <div className="relative">
                     {/* 点 - 桌面端显示 */}
                     <div className="hidden md:block absolute w-2.5 h-2.5 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A', right: '-5px', top: '-5px'}}></div>
