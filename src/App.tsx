@@ -586,15 +586,82 @@ function App() {
               </div>
             </div>
 
-            <div className="space-y-6">
-              <div className="group cursor-pointer">
-                <h3 className="text-lg font-normal transition" style={{color: '#1F1F1F'}}>面部轮廓</h3>
+            <div className="grid grid-cols-2 gap-3">
+              <div
+                className="cursor-pointer px-4 py-3 rounded-lg transition-all duration-300 active:scale-95"
+                style={{
+                  backgroundColor: '#F5F8FA',
+                  border: '1.5px solid #B9CBDC'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'scale(1.05)';
+                  e.currentTarget.style.borderColor = '#1C2B3A';
+                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(28, 43, 58, 0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.borderColor = '#B9CBDC';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
+              >
+                <h3 className="text-sm font-normal text-center" style={{color: '#1F1F1F'}}>面部轮廓</h3>
               </div>
-              <div className="group cursor-pointer">
-                <h3 className="text-lg font-normal transition" style={{color: '#1F1F1F'}}>身体塑形</h3>
+              <div
+                className="cursor-pointer px-4 py-3 rounded-lg transition-all duration-300 active:scale-95"
+                style={{
+                  backgroundColor: '#F5F8FA',
+                  border: '1.5px solid #B9CBDC'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'scale(1.05)';
+                  e.currentTarget.style.borderColor = '#1C2B3A';
+                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(28, 43, 58, 0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.borderColor = '#B9CBDC';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
+              >
+                <h3 className="text-sm font-normal text-center" style={{color: '#1F1F1F'}}>身体塑形</h3>
               </div>
-              <div className="group cursor-pointer">
-                <h3 className="text-lg font-normal transition" style={{color: '#1F1F1F'}}>注射提升</h3>
+              <div
+                className="cursor-pointer px-4 py-3 rounded-lg transition-all duration-300 active:scale-95"
+                style={{
+                  backgroundColor: '#F5F8FA',
+                  border: '1.5px solid #B9CBDC'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'scale(1.05)';
+                  e.currentTarget.style.borderColor = '#1C2B3A';
+                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(28, 43, 58, 0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.borderColor = '#B9CBDC';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
+              >
+                <h3 className="text-sm font-normal text-center" style={{color: '#1F1F1F'}}>注射提升</h3>
+              </div>
+              <div
+                className="cursor-pointer px-4 py-3 rounded-lg transition-all duration-300 active:scale-95"
+                style={{
+                  backgroundColor: '#F5F8FA',
+                  border: '1.5px solid #B9CBDC'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'scale(1.05)';
+                  e.currentTarget.style.borderColor = '#1C2B3A';
+                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(28, 43, 58, 0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.borderColor = '#B9CBDC';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
+              >
+                <h3 className="text-sm font-normal text-center" style={{color: '#1F1F1F'}}>植发</h3>
               </div>
             </div>
           </div>
