@@ -391,8 +391,6 @@ function FacialContourPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }
