@@ -678,38 +678,38 @@ function App() {
             了解你的面部特征，立即开始行之有效的行动来提升你的容颜
           </p>
 
-          {/* Mobile layout - unchanged */}
+          {/* Mobile layout - compact version */}
           <div className="md:hidden">
-            <div className="flex flex-col gap-8 mb-12">
-              <div className="flex justify-center gap-6">
-                <div className="overflow-hidden relative w-40" style={{backgroundColor: '#F3F4F6'}}>
-                  <div className="h-48 flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
+            <div className="flex flex-col gap-6 mb-10">
+              <div className="flex justify-center gap-4">
+                <div className="overflow-hidden relative w-36" style={{backgroundColor: '#F3F4F6'}}>
+                  <div className="h-40 flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
                     <span className="text-gray-500 text-xs">术前照片 (Before)</span>
                   </div>
-                  <div className="absolute bottom-3 left-3 bg-white px-2 py-1">
+                  <div className="absolute bottom-2 left-2 bg-white px-2 py-0.5">
                     <span className="text-xs text-gray-600">BEFORE</span>
                   </div>
                 </div>
-                <div className="overflow-hidden relative w-40" style={{backgroundColor: '#F3F4F6'}}>
-                  <div className="h-48 flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
+                <div className="overflow-hidden relative w-36" style={{backgroundColor: '#F3F4F6'}}>
+                  <div className="h-40 flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
                     <span className="text-gray-500 text-xs">术后照片 (After)</span>
                   </div>
-                  <div className="absolute bottom-3 left-3 bg-white px-2 py-1">
+                  <div className="absolute bottom-2 left-2 bg-white px-2 py-0.5">
                     <span className="text-xs text-gray-600">AFTER</span>
                   </div>
                 </div>
               </div>
 
-              <div className="max-w-md mx-auto space-y-8">
+              <div className="max-w-md mx-auto space-y-5">
                 {[
                   { num: '01', title: '获取专家面部分析' },
                   { num: '02', title: '你最美的样子' },
                   { num: '03', title: '获取你的专属焕颜方案' },
                   { num: '04', title: '见证显著效果' }
                 ].map((item) => (
-                  <div key={item.num} className="flex items-center gap-4 pb-8 border-b border-gray-200 last:border-0">
-                    <div className="text-lg font-light flex-shrink-0" style={{color: '#A0A7B5', width: '40px'}}>{item.num}</div>
-                    <h3 className="text-base font-normal tracking-wide" style={{color: '#1F1F1F'}}>{item.title}</h3>
+                  <div key={item.num} className="flex items-center gap-3 pb-5 border-b border-gray-200 last:border-0">
+                    <div className="text-base font-light flex-shrink-0" style={{color: '#A0A7B5', width: '36px'}}>{item.num}</div>
+                    <h3 className="text-sm font-normal tracking-wide leading-snug" style={{color: '#1F1F1F'}}>{item.title}</h3>
                   </div>
                 ))}
               </div>
