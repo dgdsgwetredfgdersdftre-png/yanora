@@ -291,7 +291,7 @@ function FacialContourPage() {
       {/* Facial Features Section */}
       <section className="py-20 md:py-28 px-6 md:px-12" style={{backgroundColor: '#FAFAFA'}}>
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+          <div className="mb-16 text-center">
             <h2 className="text-2xl md:text-3xl font-light mb-4 tracking-wide" style={{color: '#1F1F1F'}}>
               五官精雕板块
             </h2>
