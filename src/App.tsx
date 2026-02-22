@@ -672,41 +672,82 @@ function App() {
 
       <section className="py-12 md:py-24 px-6 md:px-12 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-light text-center mb-6 tracking-wide" style={{color: '#1F1F1F'}}>获取你的手术计划</h2>
+          <h2 className="text-2xl md:text-3xl font-light text-center mb-6 tracking-wide" style={{color: '#1F1F1F'}}>获取你的手术计划</h2>
           <p className="text-sm text-center mb-12 md:mb-16 tracking-wide" style={{color: '#6B7280'}}>
             了解你的面部特征，立即开始行之有效的行动来提升你的容颜
           </p>
 
-          <div className="flex flex-col md:flex-row justify-center md:items-start gap-8 md:gap-12 mb-12 md:mb-20">
-            <div className="flex justify-center gap-6 md:gap-8">
-              <div className="overflow-hidden relative w-40 md:w-64" style={{backgroundColor: '#F3F4F6'}}>
-                <div className="h-48 md:h-80 flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
-                  <span className="text-gray-500 text-xs">术前照片 (Before)</span>
+          {/* Mobile layout - unchanged */}
+          <div className="md:hidden">
+            <div className="flex flex-col gap-8 mb-12">
+              <div className="flex justify-center gap-6">
+                <div className="overflow-hidden relative w-40" style={{backgroundColor: '#F3F4F6'}}>
+                  <div className="h-48 flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
+                    <span className="text-gray-500 text-xs">术前照片 (Before)</span>
+                  </div>
+                  <div className="absolute bottom-3 left-3 bg-white px-2 py-1">
+                    <span className="text-xs text-gray-600">BEFORE</span>
+                  </div>
                 </div>
-                <div className="absolute bottom-3 left-3 bg-white px-2 py-1">
-                  <span className="text-xs text-gray-600">BEFORE</span>
+                <div className="overflow-hidden relative w-40" style={{backgroundColor: '#F3F4F6'}}>
+                  <div className="h-48 flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
+                    <span className="text-gray-500 text-xs">术后照片 (After)</span>
+                  </div>
+                  <div className="absolute bottom-3 left-3 bg-white px-2 py-1">
+                    <span className="text-xs text-gray-600">AFTER</span>
+                  </div>
                 </div>
               </div>
-              <div className="overflow-hidden relative w-40 md:w-64" style={{backgroundColor: '#F3F4F6'}}>
-                <div className="h-48 md:h-80 flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
-                  <span className="text-gray-500 text-xs">术后照片 (After)</span>
+
+              <div className="max-w-md mx-auto space-y-8">
+                {[
+                  { num: '01', title: '获取专家面部分析' },
+                  { num: '02', title: '你最美的样子' },
+                  { num: '03', title: '获取你的专属焕颜方案' },
+                  { num: '04', title: '见证显著效果' }
+                ].map((item) => (
+                  <div key={item.num} className="flex items-center gap-4 pb-8 border-b border-gray-200 last:border-0">
+                    <div className="text-lg font-light flex-shrink-0" style={{color: '#A0A7B5', width: '40px'}}>{item.num}</div>
+                    <h3 className="text-base font-normal tracking-wide" style={{color: '#1F1F1F'}}>{item.title}</h3>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop layout - new design */}
+          <div className="hidden md:flex md:items-start md:gap-16">
+            {/* Before/After Images Section */}
+            <div className="flex gap-8 flex-shrink-0">
+              <div className="overflow-hidden relative" style={{width: '320px', backgroundColor: '#F3F4F6'}}>
+                <div className="h-96 flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
+                  <span className="text-gray-600 text-sm">术前照片 (Before)</span>
                 </div>
-                <div className="absolute bottom-3 left-3 bg-white px-2 py-1">
-                  <span className="text-xs text-gray-600">AFTER</span>
+                <div className="absolute bottom-4 left-4 bg-white px-3 py-1.5 shadow">
+                  <span className="text-xs font-medium text-gray-700">BEFORE</span>
+                </div>
+              </div>
+              <div className="overflow-hidden relative" style={{width: '320px', backgroundColor: '#F3F4F6'}}>
+                <div className="h-96 flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
+                  <span className="text-gray-600 text-sm">术后照片 (After)</span>
+                </div>
+                <div className="absolute bottom-4 left-4 bg-white px-3 py-1.5 shadow">
+                  <span className="text-xs font-medium text-gray-700">AFTER</span>
                 </div>
               </div>
             </div>
 
-            <div className="max-w-md mx-auto md:mx-0 space-y-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-12 md:max-w-none md:flex-1">
+            {/* Steps Section */}
+            <div className="flex-1 grid grid-cols-2 gap-x-12 gap-y-16 pt-8">
               {[
                 { num: '01', title: '获取专家面部分析' },
                 { num: '02', title: '你最美的样子' },
                 { num: '03', title: '获取你的专属焕颜方案' },
                 { num: '04', title: '见证显著效果' }
               ].map((item) => (
-                <div key={item.num} className="flex items-center gap-4 md:gap-6 pb-8 md:pb-0 border-b md:border-b-0 border-gray-200 last:border-0">
-                  <div className="text-lg font-light flex-shrink-0" style={{color: '#A0A7B5', width: '40px'}}>{item.num}</div>
-                  <h3 className="text-base font-normal tracking-wide" style={{color: '#1F1F1F'}}>{item.title}</h3>
+                <div key={item.num} className="flex flex-col">
+                  <div className="text-4xl font-extralight mb-4" style={{color: '#D1D5DB'}}>{item.num}</div>
+                  <h3 className="text-base font-normal leading-relaxed" style={{color: '#1F1F1F'}}>{item.title}</h3>
                 </div>
               ))}
             </div>
