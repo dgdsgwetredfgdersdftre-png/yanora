@@ -797,7 +797,7 @@ function App() {
                   <span className="text-gray-500 text-xs md:text-sm">手术前</span>
                 </div>
                 <div className="space-y-2 md:space-y-3 text-xs md:text-sm" style={{color: '#4B5563'}}>
-                  <p className="font-normal mb-2 md:mb-4">手术前特征：</p>
+                  <p className="font-normal mb-2 md:mb-4 whitespace-nowrap">手术前特征：</p>
                   <p className="font-light">• 面部轮廓不够立体</p>
                   <p className="font-light">• 鼻梁较低</p>
                   <p className="font-light">• 下颌线条不够明显</p>
@@ -810,7 +810,7 @@ function App() {
                   <span className="text-white text-xs md:text-sm">手术后</span>
                 </div>
                 <div className="space-y-2 md:space-y-3 text-xs md:text-sm" style={{color: '#4B5563'}}>
-                  <p className="font-normal mb-2 md:mb-4">手术后特征：</p>
+                  <p className="font-normal mb-2 md:mb-4 whitespace-nowrap">手术后特征：</p>
                   <p className="font-light">• 面部轮廓立体分明</p>
                   <p className="font-light">• 鼻梁挺拔自然</p>
                   <p className="font-light">• 下颌线条流畅优雅</p>
