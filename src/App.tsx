@@ -956,9 +956,9 @@ function App() {
           </div>
 
           {/* Desktop layout - new design */}
-          <div className="hidden md:flex md:items-start md:gap-16">
+          <div className="hidden md:flex md:flex-col md:items-center">
             {/* Before/After Images Section */}
-            <div className="flex gap-8 flex-shrink-0">
+            <div className="flex gap-8 flex-shrink-0 mb-12">
               <div className="overflow-hidden relative" style={{width: '320px', backgroundColor: '#F3F4F6'}}>
                 <div className="h-96 flex items-center justify-center" style={{backgroundColor: '#B9CBDC'}}>
                   <span className="text-gray-600 text-sm">术前照片 (Before)</span>
@@ -977,15 +977,15 @@ function App() {
               </div>
             </div>
 
-            {/* Steps Section */}
-            <div className="flex-1 grid grid-cols-2 gap-x-12 gap-y-16 pt-8">
+            {/* Steps Section - Single Row */}
+            <div className="flex gap-16 justify-center">
               {[
                 { num: '01', title: '获取专家面部分析' },
                 { num: '02', title: '你最美的样子' },
                 { num: '03', title: '获取你的专属焕颜方案' },
                 { num: '04', title: '见证显著效果' }
               ].map((item) => (
-                <div key={item.num} className="flex flex-col">
+                <div key={item.num} className="flex flex-col items-center text-center">
                   <div className="text-4xl font-extralight mb-4" style={{color: '#D1D5DB'}}>{item.num}</div>
                   <h3 className="text-base font-normal leading-relaxed" style={{color: '#1F1F1F'}}>{item.title}</h3>
                 </div>
