@@ -78,12 +78,12 @@ function FacialContourPage() {
     <div className="min-h-screen bg-white">
       <Navbar />
       {/* Hero Section - Core Value Statement */}
-      <section className="py-24 md:py-32 px-6 md:px-12 bg-white md:bg-[#FAFAFA]">
+      <section className="py-16 md:py-20 px-6 md:px-12 bg-white md:bg-[#FAFAFA]">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl md:text-5xl font-light mb-8 leading-relaxed tracking-wide" style={{color: '#1F1F1F'}}>
+          <h1 className="text-3xl md:text-5xl font-light mb-6 leading-relaxed tracking-wide" style={{color: '#1F1F1F'}}>
             面部轮廓重塑
           </h1>
-          <p className="text-base md:text-lg font-light leading-relaxed mb-12" style={{color: '#4B5563'}}>
+          <p className="text-base md:text-lg font-light leading-relaxed mb-8" style={{color: '#4B5563'}}>
             我们根据不同人种的面部结构和骨架特征，结合个人审美偏好，科学地提供个性化整形解决方案。
           </p>
           <button
@@ -104,11 +104,15 @@ function FacialContourPage() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-16 text-center">
             <div className="flex justify-center mb-16">
-              <div className="w-full md:w-2/3 lg:w-1/2 relative">
+              <div className="w-full md:w-2/3 lg:w-1/2 relative bg-white p-8">
                 <img
                   src="/Gemini_Generated_Image_qvpx6jqvpx6jqvpx.png"
                   alt="面部轮廓示例"
                   className="w-full h-auto object-contain"
+                  style={{
+                    filter: 'brightness(1.1)',
+                    mixBlendMode: 'multiply'
+                  }}
                 />
 
                 {/* 额头标注 - 左侧 */}
