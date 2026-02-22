@@ -1077,15 +1077,18 @@ function App() {
                   title: '4. 动态与肌肉维度'
                 }
               ].map((item, index) => (
-                <div key={index} className="flex gap-4 items-center bg-white p-3 rounded-lg shadow-sm">
+                <div key={index} className="flex gap-4 items-center bg-white p-4 rounded-xl shadow-md border-l-4" style={{borderLeftColor: '#1C2B3A'}}>
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-24 h-24 object-cover rounded-lg flex-shrink-0"
+                    className="w-28 h-28 object-cover rounded-lg flex-shrink-0 shadow-sm"
                   />
-                  <h3 className="text-sm font-medium flex-1" style={{color: '#1F2937'}}>
-                    {item.title}
-                  </h3>
+                  <div className="flex-1">
+                    <h3 className="text-base font-medium relative inline-block pb-1" style={{color: '#1F2937'}}>
+                      {item.title}
+                      <span className="absolute bottom-0 left-0 w-full h-0.5" style={{backgroundColor: '#B9CBDC'}}></span>
+                    </h3>
+                  </div>
                 </div>
               ))}
             </div>
