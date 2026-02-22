@@ -776,7 +776,7 @@ function App() {
                   { ethnicity: '白人', image: '/white_facial_features/3.png' }
                 ].map((item) => (
                   <div key={item.ethnicity} className="flex-shrink-0 w-32 snap-center">
-                    <div className="aspect-[3/4] overflow-hidden mb-2 bg-gray-100 rounded-lg">
+                    <div className="aspect-[3/4] overflow-hidden mb-2 bg-gray-100">
                       <img src={item.image} alt={`${item.ethnicity}面部特征`} className="w-full h-full object-cover" />
                     </div>
                     <p className="text-xs text-center font-normal" style={{color: '#1F1F1F'}}>{item.ethnicity}</p>
