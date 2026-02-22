@@ -33,12 +33,23 @@ function BodySculptingPage() {
 
       <section className="py-24 px-2">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl font-light mb-6 tracking-wide" style={{color: '#1F1F1F'}}>
-            身体塑形
-          </h1>
-          <p className="text-lg mb-12 leading-relaxed" style={{color: '#6B7280'}}>
-            科学塑形方案，打造理想身材曲线
-          </p>
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-light mb-6 tracking-wide" style={{color: '#1F1F1F'}}>
+              身体塑形
+            </h1>
+            <p className="text-lg mb-8 leading-relaxed" style={{color: '#6B7280'}}>
+              科学塑形方案，打造理想身材曲线
+            </p>
+            <button
+              onClick={() => navigate('/booking')}
+              className="px-10 py-3 text-white text-sm transition tracking-wider rounded-sm"
+              style={{backgroundColor: '#1C2B3A'}}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#101D29'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#1C2B3A'}
+            >
+              现在开始探索
+            </button>
+          </div>
 
           <div className="bg-white p-0 mb-16">
             {/* Desktop view - 3 images side by side */}
