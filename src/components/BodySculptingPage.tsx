@@ -103,14 +103,15 @@ function BodySculptingPage() {
                   }}
                 >
                   {images.map((src, index) => (
-                    <div key={index} className="w-full flex-shrink-0 flex justify-center items-end">
+                    <div key={index} className="w-full flex-shrink-0 flex justify-center items-center px-4">
                       <img
                         src={src}
                         alt={`身体塑形示例${index + 1}`}
-                        className="h-[500px] object-contain"
+                        className="w-full max-w-md object-contain"
                         style={{
                           filter: 'brightness(1.1) contrast(1.05)',
-                          mixBlendMode: 'darken'
+                          mixBlendMode: 'darken',
+                          height: 'auto'
                         }}
                       />
                     </div>
