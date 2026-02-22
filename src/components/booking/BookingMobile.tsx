@@ -363,16 +363,57 @@ function BookingMobile({
 
           {step === 'payment' && (
             <div className="bg-white rounded-2xl shadow-lg p-6">
-              <div className="text-center mb-6">
-                <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style={{backgroundColor: '#1C2B3A'}}>
-                  <Calendar className="w-8 h-8 text-white" />
+              <div className="mb-6">
+                <div className="border p-5 mb-6 rounded-lg" style={{borderColor: '#E5E7EB', backgroundColor: '#F9FAFB'}}>
+                  <div className="flex justify-between items-start mb-2">
+                    <h2 className="text-lg font-light tracking-wide" style={{color: '#1F1F1F'}}>
+                      终身VIP会员
+                    </h2>
+                    <span className="text-2xl font-light" style={{color: '#1F1F1F'}}>$200</span>
+                  </div>
+                  <p className="text-xs tracking-wide" style={{color: '#6B7280'}}>
+                    享受终身尊享服务与专属优惠
+                  </p>
                 </div>
-                <h1 className="text-2xl font-light mb-2 tracking-wide" style={{color: '#1F1F1F'}}>
-                  支付面诊金
-                </h1>
-                <p className="text-xs tracking-wide" style={{color: '#6B7280'}}>
-                  完成支付后，我们将确认您的预约
-                </p>
+
+                <h3 className="text-sm font-normal mb-4 tracking-wide" style={{color: '#1F1F1F'}}>
+                  选择服务项目
+                </h3>
+
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center gap-3 border p-3 rounded-lg" style={{borderColor: '#E5E7EB'}}>
+                    <div className="w-16 h-16 flex-shrink-0 bg-gray-200 rounded"></div>
+                    <div className="flex-1">
+                      <div className="flex justify-between items-center mb-1">
+                        <span className="text-sm font-normal tracking-wide" style={{color: '#1F1F1F'}}>注射改善</span>
+                        <span className="text-sm font-light" style={{color: '#1F1F1F'}}>$40</span>
+                      </div>
+                      <p className="text-xs" style={{color: '#6B7280'}}>微创注射美容方案</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3 border p-3 rounded-lg" style={{borderColor: '#E5E7EB'}}>
+                    <div className="w-16 h-16 flex-shrink-0 bg-gray-200 rounded"></div>
+                    <div className="flex-1">
+                      <div className="flex justify-between items-center mb-1">
+                        <span className="text-sm font-normal tracking-wide" style={{color: '#1F1F1F'}}>通过手术改善</span>
+                        <span className="text-sm font-light" style={{color: '#1F1F1F'}}>$80</span>
+                      </div>
+                      <p className="text-xs" style={{color: '#6B7280'}}>专业手术美容方案</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3 border p-3 rounded-lg" style={{borderColor: '#E5E7EB'}}>
+                    <div className="w-16 h-16 flex-shrink-0 bg-gray-200 rounded"></div>
+                    <div className="flex-1">
+                      <div className="flex justify-between items-center mb-1">
+                        <span className="text-sm font-normal tracking-wide" style={{color: '#1F1F1F'}}>头发建议</span>
+                        <span className="text-sm font-light" style={{color: '#1F1F1F'}}>$20</span>
+                      </div>
+                      <p className="text-xs" style={{color: '#6B7280'}}>专业毛发健康咨询</p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {error && (
@@ -381,42 +422,33 @@ function BookingMobile({
                 </div>
               )}
 
-              <div className="p-5 mb-6 rounded-lg" style={{backgroundColor: '#F5F3F0'}}>
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm" style={{color: '#6B7280'}}>面诊金</span>
-                  <span className="text-2xl font-light" style={{color: '#1F1F1F'}}>¥500</span>
-                </div>
-                <p className="text-xs" style={{color: '#6B7280'}}>
-                  此费用用于预约确认，后续手术费用将根据您的个性化方案确定
-                </p>
-              </div>
-
               <div className="space-y-3">
                 <button
-                  onClick={() => handlePayment('微信支付')}
+                  onClick={() => handlePayment('PayPal')}
                   disabled={loading}
-                  className="w-full py-3.5 border text-sm transition hover:bg-gray-50 disabled:opacity-50 rounded-lg"
+                  className="w-full py-3.5 border text-sm transition hover:bg-gray-50 disabled:opacity-50 rounded-lg font-normal tracking-wide"
                   style={{borderColor: '#E5E7EB', color: '#1F1F1F'}}
                 >
-                  {loading ? '处理中...' : '微信支付'}
-                </button>
-
-                <button
-                  onClick={() => handlePayment('支付宝')}
-                  disabled={loading}
-                  className="w-full py-3.5 border text-sm transition hover:bg-gray-50 disabled:opacity-50 rounded-lg"
-                  style={{borderColor: '#E5E7EB', color: '#1F1F1F'}}
-                >
-                  {loading ? '处理中...' : '支付宝'}
+                  {loading ? '处理中...' : 'PayPal支付'}
                 </button>
 
                 <button
                   onClick={() => handlePayment('银行卡')}
                   disabled={loading}
-                  className="w-full py-3.5 border text-sm transition hover:bg-gray-50 disabled:opacity-50 rounded-lg"
+                  className="w-full py-3.5 border text-sm transition hover:bg-gray-50 disabled:opacity-50 rounded-lg font-normal tracking-wide"
                   style={{borderColor: '#E5E7EB', color: '#1F1F1F'}}
                 >
                   {loading ? '处理中...' : '银行卡支付'}
+                </button>
+              </div>
+
+              <div className="mt-6 text-center">
+                <button
+                  onClick={() => navigate('/')}
+                  className="text-xs transition tracking-wide"
+                  style={{color: '#6B7280'}}
+                >
+                  返回首页
                 </button>
               </div>
             </div>

@@ -362,17 +362,9 @@ function BookingDesktop({
 
           {step === 'payment' && (
             <>
-              <div className="text-center mb-12">
-                <div className="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center" style={{backgroundColor: '#1C2B3A'}}>
-                  <Calendar className="w-10 h-10 text-white" />
-                </div>
-                <h1 className="text-3xl font-light mb-4 tracking-wide" style={{color: '#1F1F1F'}}>
-                  支付面诊金
-                </h1>
-                <p className="text-sm tracking-wide" style={{color: '#6B7280'}}>
-                  完成支付后，我们将确认您的预约
-                </p>
-              </div>
+              <h1 className="text-3xl font-light text-center mb-12 tracking-wide" style={{color: '#1F1F1F'}}>
+                选择服务套餐
+              </h1>
 
               {error && (
                 <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-600 text-sm">
@@ -380,39 +372,67 @@ function BookingDesktop({
                 </div>
               )}
 
-              <div className="bg-gray-50 p-8 mb-8">
-                <div className="flex justify-between items-center mb-4">
-                  <span className="text-sm" style={{color: '#6B7280'}}>面诊金</span>
-                  <span className="text-2xl font-light" style={{color: '#1F1F1F'}}>¥500</span>
+              <div className="border p-8 mb-10" style={{borderColor: '#D1D5DB', backgroundColor: '#F9FAFB'}}>
+                <div className="flex justify-between items-start mb-3">
+                  <div>
+                    <h2 className="text-2xl font-light tracking-wide mb-2" style={{color: '#1F1F1F'}}>
+                      终身VIP会员
+                    </h2>
+                    <p className="text-sm tracking-wide" style={{color: '#6B7280'}}>
+                      享受终身尊享服务与专属优惠
+                    </p>
+                  </div>
+                  <span className="text-3xl font-light" style={{color: '#1F1F1F'}}>$200</span>
                 </div>
-                <p className="text-xs" style={{color: '#6B7280'}}>
-                  此费用用于预约确认，后续手术费用将根据您的个性化方案确定
-                </p>
+              </div>
+
+              <h3 className="text-lg font-normal mb-6 tracking-wide" style={{color: '#1F1F1F'}}>
+                服务项目
+              </h3>
+
+              <div className="grid grid-cols-3 gap-6 mb-10">
+                <div className="border p-5" style={{borderColor: '#D1D5DB'}}>
+                  <div className="w-full aspect-square bg-gray-200 rounded mb-4"></div>
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-sm font-normal tracking-wide" style={{color: '#1F1F1F'}}>注射改善</span>
+                    <span className="text-lg font-light" style={{color: '#1F1F1F'}}>$40</span>
+                  </div>
+                  <p className="text-xs" style={{color: '#6B7280'}}>微创注射美容方案</p>
+                </div>
+
+                <div className="border p-5" style={{borderColor: '#D1D5DB'}}>
+                  <div className="w-full aspect-square bg-gray-200 rounded mb-4"></div>
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-sm font-normal tracking-wide" style={{color: '#1F1F1F'}}>通过手术改善</span>
+                    <span className="text-lg font-light" style={{color: '#1F1F1F'}}>$80</span>
+                  </div>
+                  <p className="text-xs" style={{color: '#6B7280'}}>专业手术美容方案</p>
+                </div>
+
+                <div className="border p-5" style={{borderColor: '#D1D5DB'}}>
+                  <div className="w-full aspect-square bg-gray-200 rounded mb-4"></div>
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-sm font-normal tracking-wide" style={{color: '#1F1F1F'}}>头发建议</span>
+                    <span className="text-lg font-light" style={{color: '#1F1F1F'}}>$20</span>
+                  </div>
+                  <p className="text-xs" style={{color: '#6B7280'}}>专业毛发健康咨询</p>
+                </div>
               </div>
 
               <div className="space-y-4">
                 <button
-                  onClick={() => handlePayment('微信支付')}
+                  onClick={() => handlePayment('PayPal')}
                   disabled={loading}
-                  className="w-full py-4 border text-sm transition hover:bg-gray-50 disabled:opacity-50"
+                  className="w-full py-4 border text-sm transition hover:bg-gray-50 disabled:opacity-50 font-normal tracking-wide"
                   style={{borderColor: '#D1D5DB', color: '#1F1F1F'}}
                 >
-                  {loading ? '处理中...' : '微信支付'}
-                </button>
-
-                <button
-                  onClick={() => handlePayment('支付宝')}
-                  disabled={loading}
-                  className="w-full py-4 border text-sm transition hover:bg-gray-50 disabled:opacity-50"
-                  style={{borderColor: '#D1D5DB', color: '#1F1F1F'}}
-                >
-                  {loading ? '处理中...' : '支付宝'}
+                  {loading ? '处理中...' : 'PayPal支付'}
                 </button>
 
                 <button
                   onClick={() => handlePayment('银行卡')}
                   disabled={loading}
-                  className="w-full py-4 border text-sm transition hover:bg-gray-50 disabled:opacity-50"
+                  className="w-full py-4 border text-sm transition hover:bg-gray-50 disabled:opacity-50 font-normal tracking-wide"
                   style={{borderColor: '#D1D5DB', color: '#1F1F1F'}}
                 >
                   {loading ? '处理中...' : '银行卡支付'}
