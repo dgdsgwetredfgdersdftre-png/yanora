@@ -1,5 +1,6 @@
 import { Calendar } from 'lucide-react';
 import { BookingFormData, BookingStep } from '../BookingPage';
+import { useState } from 'react';
 
 interface BookingDesktopProps {
   step: BookingStep;
@@ -12,6 +13,182 @@ interface BookingDesktopProps {
   navigate: (path: string) => void;
 }
 
+const countryCodes = [
+  { code: '+93', name: '阿富汗', flag: '🇦🇫' },
+  { code: '+355', name: '阿尔巴尼亚', flag: '🇦🇱' },
+  { code: '+213', name: '阿尔及利亚', flag: '🇩🇿' },
+  { code: '+376', name: '安道尔', flag: '🇦🇩' },
+  { code: '+244', name: '安哥拉', flag: '🇦🇴' },
+  { code: '+54', name: '阿根廷', flag: '🇦🇷' },
+  { code: '+374', name: '亚美尼亚', flag: '🇦🇲' },
+  { code: '+61', name: '澳大利亚', flag: '🇦🇺' },
+  { code: '+43', name: '奥地利', flag: '🇦🇹' },
+  { code: '+994', name: '阿塞拜疆', flag: '🇦🇿' },
+  { code: '+973', name: '巴林', flag: '🇧🇭' },
+  { code: '+880', name: '孟加拉国', flag: '🇧🇩' },
+  { code: '+375', name: '白俄罗斯', flag: '🇧🇾' },
+  { code: '+32', name: '比利时', flag: '🇧🇪' },
+  { code: '+501', name: '伯利兹', flag: '🇧🇿' },
+  { code: '+229', name: '贝宁', flag: '🇧🇯' },
+  { code: '+975', name: '不丹', flag: '🇧🇹' },
+  { code: '+591', name: '玻利维亚', flag: '🇧🇴' },
+  { code: '+387', name: '波黑', flag: '🇧🇦' },
+  { code: '+267', name: '博茨瓦纳', flag: '🇧🇼' },
+  { code: '+55', name: '巴西', flag: '🇧🇷' },
+  { code: '+673', name: '文莱', flag: '🇧🇳' },
+  { code: '+359', name: '保加利亚', flag: '🇧🇬' },
+  { code: '+226', name: '布基纳法索', flag: '🇧🇫' },
+  { code: '+257', name: '布隆迪', flag: '🇧🇮' },
+  { code: '+855', name: '柬埔寨', flag: '🇰🇭' },
+  { code: '+237', name: '喀麦隆', flag: '🇨🇲' },
+  { code: '+1', name: '加拿大', flag: '🇨🇦' },
+  { code: '+238', name: '佛得角', flag: '🇨🇻' },
+  { code: '+236', name: '中非', flag: '🇨🇫' },
+  { code: '+235', name: '乍得', flag: '🇹🇩' },
+  { code: '+56', name: '智利', flag: '🇨🇱' },
+  { code: '+86', name: '中国', flag: '🇨🇳' },
+  { code: '+57', name: '哥伦比亚', flag: '🇨🇴' },
+  { code: '+269', name: '科摩罗', flag: '🇰🇲' },
+  { code: '+242', name: '刚果(布)', flag: '🇨🇬' },
+  { code: '+243', name: '刚果(金)', flag: '🇨🇩' },
+  { code: '+506', name: '哥斯达黎加', flag: '🇨🇷' },
+  { code: '+385', name: '克罗地亚', flag: '🇭🇷' },
+  { code: '+53', name: '古巴', flag: '🇨🇺' },
+  { code: '+357', name: '塞浦路斯', flag: '🇨🇾' },
+  { code: '+420', name: '捷克', flag: '🇨🇿' },
+  { code: '+45', name: '丹麦', flag: '🇩🇰' },
+  { code: '+253', name: '吉布提', flag: '🇩🇯' },
+  { code: '+593', name: '厄瓜多尔', flag: '🇪🇨' },
+  { code: '+20', name: '埃及', flag: '🇪🇬' },
+  { code: '+503', name: '萨尔瓦多', flag: '🇸🇻' },
+  { code: '+240', name: '赤道几内亚', flag: '🇬🇶' },
+  { code: '+291', name: '厄立特里亚', flag: '🇪🇷' },
+  { code: '+372', name: '爱沙尼亚', flag: '🇪🇪' },
+  { code: '+251', name: '埃塞俄比亚', flag: '🇪🇹' },
+  { code: '+679', name: '斐济', flag: '🇫🇯' },
+  { code: '+358', name: '芬兰', flag: '🇫🇮' },
+  { code: '+33', name: '法国', flag: '🇫🇷' },
+  { code: '+241', name: '加蓬', flag: '🇬🇦' },
+  { code: '+220', name: '冈比亚', flag: '🇬🇲' },
+  { code: '+995', name: '格鲁吉亚', flag: '🇬🇪' },
+  { code: '+49', name: '德国', flag: '🇩🇪' },
+  { code: '+233', name: '加纳', flag: '🇬🇭' },
+  { code: '+30', name: '希腊', flag: '🇬🇷' },
+  { code: '+502', name: '危地马拉', flag: '🇬🇹' },
+  { code: '+224', name: '几内亚', flag: '🇬🇳' },
+  { code: '+245', name: '几内亚比绍', flag: '🇬🇼' },
+  { code: '+592', name: '圭亚那', flag: '🇬🇾' },
+  { code: '+509', name: '海地', flag: '🇭🇹' },
+  { code: '+504', name: '洪都拉斯', flag: '🇭🇳' },
+  { code: '+852', name: '香港', flag: '🇭🇰' },
+  { code: '+36', name: '匈牙利', flag: '🇭🇺' },
+  { code: '+354', name: '冰岛', flag: '🇮🇸' },
+  { code: '+91', name: '印度', flag: '🇮🇳' },
+  { code: '+62', name: '印度尼西亚', flag: '🇮🇩' },
+  { code: '+98', name: '伊朗', flag: '🇮🇷' },
+  { code: '+964', name: '伊拉克', flag: '🇮🇶' },
+  { code: '+353', name: '爱尔兰', flag: '🇮🇪' },
+  { code: '+972', name: '以色列', flag: '🇮🇱' },
+  { code: '+39', name: '意大利', flag: '🇮🇹' },
+  { code: '+225', name: '科特迪瓦', flag: '🇨🇮' },
+  { code: '+81', name: '日本', flag: '🇯🇵' },
+  { code: '+962', name: '约旦', flag: '🇯🇴' },
+  { code: '+7', name: '哈萨克斯坦', flag: '🇰🇿' },
+  { code: '+254', name: '肯尼亚', flag: '🇰🇪' },
+  { code: '+965', name: '科威特', flag: '🇰🇼' },
+  { code: '+996', name: '吉尔吉斯斯坦', flag: '🇰🇬' },
+  { code: '+856', name: '老挝', flag: '🇱🇦' },
+  { code: '+371', name: '拉脱维亚', flag: '🇱🇻' },
+  { code: '+961', name: '黎巴嫩', flag: '🇱🇧' },
+  { code: '+266', name: '莱索托', flag: '🇱🇸' },
+  { code: '+231', name: '利比里亚', flag: '🇱🇷' },
+  { code: '+218', name: '利比亚', flag: '🇱🇾' },
+  { code: '+423', name: '列支敦士登', flag: '🇱🇮' },
+  { code: '+370', name: '立陶宛', flag: '🇱🇹' },
+  { code: '+352', name: '卢森堡', flag: '🇱🇺' },
+  { code: '+853', name: '澳门', flag: '🇲🇴' },
+  { code: '+389', name: '北马其顿', flag: '🇲🇰' },
+  { code: '+261', name: '马达加斯加', flag: '🇲🇬' },
+  { code: '+265', name: '马拉维', flag: '🇲🇼' },
+  { code: '+60', name: '马来西亚', flag: '🇲🇾' },
+  { code: '+960', name: '马尔代夫', flag: '🇲🇻' },
+  { code: '+223', name: '马里', flag: '🇲🇱' },
+  { code: '+356', name: '马耳他', flag: '🇲🇹' },
+  { code: '+222', name: '毛里塔尼亚', flag: '🇲🇷' },
+  { code: '+230', name: '毛里求斯', flag: '🇲🇺' },
+  { code: '+52', name: '墨西哥', flag: '🇲🇽' },
+  { code: '+373', name: '摩尔多瓦', flag: '🇲🇩' },
+  { code: '+377', name: '摩纳哥', flag: '🇲🇨' },
+  { code: '+976', name: '蒙古', flag: '🇲🇳' },
+  { code: '+382', name: '黑山', flag: '🇲🇪' },
+  { code: '+212', name: '摩洛哥', flag: '🇲🇦' },
+  { code: '+258', name: '莫桑比克', flag: '🇲🇿' },
+  { code: '+95', name: '缅甸', flag: '🇲🇲' },
+  { code: '+264', name: '纳米比亚', flag: '🇳🇦' },
+  { code: '+977', name: '尼泊尔', flag: '🇳🇵' },
+  { code: '+31', name: '荷兰', flag: '🇳🇱' },
+  { code: '+64', name: '新西兰', flag: '🇳🇿' },
+  { code: '+505', name: '尼加拉瓜', flag: '🇳🇮' },
+  { code: '+227', name: '尼日尔', flag: '🇳🇪' },
+  { code: '+234', name: '尼日利亚', flag: '🇳🇬' },
+  { code: '+850', name: '朝鲜', flag: '🇰🇵' },
+  { code: '+47', name: '挪威', flag: '🇳🇴' },
+  { code: '+968', name: '阿曼', flag: '🇴🇲' },
+  { code: '+92', name: '巴基斯坦', flag: '🇵🇰' },
+  { code: '+507', name: '巴拿马', flag: '🇵🇦' },
+  { code: '+675', name: '巴布亚新几内亚', flag: '🇵🇬' },
+  { code: '+595', name: '巴拉圭', flag: '🇵🇾' },
+  { code: '+51', name: '秘鲁', flag: '🇵🇪' },
+  { code: '+63', name: '菲律宾', flag: '🇵🇭' },
+  { code: '+48', name: '波兰', flag: '🇵🇱' },
+  { code: '+351', name: '葡萄牙', flag: '🇵🇹' },
+  { code: '+974', name: '卡塔尔', flag: '🇶🇦' },
+  { code: '+40', name: '罗马尼亚', flag: '🇷🇴' },
+  { code: '+7', name: '俄罗斯', flag: '🇷🇺' },
+  { code: '+250', name: '卢旺达', flag: '🇷🇼' },
+  { code: '+966', name: '沙特阿拉伯', flag: '🇸🇦' },
+  { code: '+221', name: '塞内加尔', flag: '🇸🇳' },
+  { code: '+381', name: '塞尔维亚', flag: '🇷🇸' },
+  { code: '+248', name: '塞舌尔', flag: '🇸🇨' },
+  { code: '+232', name: '塞拉利昂', flag: '🇸🇱' },
+  { code: '+65', name: '新加坡', flag: '🇸🇬' },
+  { code: '+421', name: '斯洛伐克', flag: '🇸🇰' },
+  { code: '+386', name: '斯洛文尼亚', flag: '🇸🇮' },
+  { code: '+677', name: '所罗门群岛', flag: '🇸🇧' },
+  { code: '+252', name: '索马里', flag: '🇸🇴' },
+  { code: '+27', name: '南非', flag: '🇿🇦' },
+  { code: '+82', name: '韩国', flag: '🇰🇷' },
+  { code: '+211', name: '南苏丹', flag: '🇸🇸' },
+  { code: '+34', name: '西班牙', flag: '🇪🇸' },
+  { code: '+94', name: '斯里兰卡', flag: '🇱🇰' },
+  { code: '+249', name: '苏丹', flag: '🇸🇩' },
+  { code: '+597', name: '苏里南', flag: '🇸🇷' },
+  { code: '+46', name: '瑞典', flag: '🇸🇪' },
+  { code: '+41', name: '瑞士', flag: '🇨🇭' },
+  { code: '+963', name: '叙利亚', flag: '🇸🇾' },
+  { code: '+886', name: '台湾', flag: '🇹🇼' },
+  { code: '+992', name: '塔吉克斯坦', flag: '🇹🇯' },
+  { code: '+255', name: '坦桑尼亚', flag: '🇹🇿' },
+  { code: '+66', name: '泰国', flag: '🇹🇭' },
+  { code: '+228', name: '多哥', flag: '🇹🇬' },
+  { code: '+216', name: '突尼斯', flag: '🇹🇳' },
+  { code: '+90', name: '土耳其', flag: '🇹🇷' },
+  { code: '+993', name: '土库曼斯坦', flag: '🇹🇲' },
+  { code: '+256', name: '乌干达', flag: '🇺🇬' },
+  { code: '+380', name: '乌克兰', flag: '🇺🇦' },
+  { code: '+971', name: '阿联酋', flag: '🇦🇪' },
+  { code: '+44', name: '英国', flag: '🇬🇧' },
+  { code: '+1', name: '美国', flag: '🇺🇸' },
+  { code: '+598', name: '乌拉圭', flag: '🇺🇾' },
+  { code: '+998', name: '乌兹别克斯坦', flag: '🇺🇿' },
+  { code: '+678', name: '瓦努阿图', flag: '🇻🇺' },
+  { code: '+58', name: '委内瑞拉', flag: '🇻🇪' },
+  { code: '+84', name: '越南', flag: '🇻🇳' },
+  { code: '+967', name: '也门', flag: '🇾🇪' },
+  { code: '+260', name: '赞比亚', flag: '🇿🇲' },
+  { code: '+263', name: '津巴布韦', flag: '🇿🇼' },
+];
+
 function BookingDesktop({
   step,
   formData,
@@ -22,6 +199,33 @@ function BookingDesktop({
   handlePayment,
   navigate
 }: BookingDesktopProps) {
+  const [countryCode, setCountryCode] = useState('+86');
+  const [phoneNumber, setPhoneNumber] = useState('');
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setPhoneNumber(value);
+    const syntheticEvent = {
+      target: {
+        name: 'phone',
+        value: `${countryCode}${value}`
+      }
+    } as React.ChangeEvent<HTMLInputElement>;
+    handleChange(syntheticEvent);
+  };
+
+  const handleCountryCodeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newCode = e.target.value;
+    setCountryCode(newCode);
+    const syntheticEvent = {
+      target: {
+        name: 'phone',
+        value: `${newCode}${phoneNumber}`
+      }
+    } as React.ChangeEvent<HTMLInputElement>;
+    handleChange(syntheticEvent);
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <nav className="sticky top-0 bg-white z-50 py-6 border-b" style={{borderColor: '#E5E7EB'}}>
@@ -53,36 +257,37 @@ function BookingDesktop({
               )}
 
               <form onSubmit={handleSubmit} className="space-y-8">
-                <div>
-                  <label className="block text-sm font-normal mb-3 tracking-wide" style={{color: '#1F1F1F'}}>
-                    姓名 <span style={{color: '#EF4444'}}>*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-5 py-4 border text-sm tracking-wide transition focus:outline-none focus:border-gray-900"
-                    style={{borderColor: '#D1D5DB', color: '#1F1F1F'}}
-                    placeholder="请输入您的姓名"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-normal mb-3 tracking-wide" style={{color: '#1F1F1F'}}>
-                    电话 <span style={{color: '#EF4444'}}>*</span>
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-5 py-4 border text-sm tracking-wide transition focus:outline-none focus:border-gray-900"
-                    style={{borderColor: '#D1D5DB', color: '#1F1F1F'}}
-                    placeholder="请输入您的电话号码"
-                  />
+                <div className="grid grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-normal mb-3 tracking-wide" style={{color: '#1F1F1F'}}>
+                      姓 <span style={{color: '#EF4444'}}>*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="lastName"
+                      value={formData.lastName || ''}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-5 py-4 border text-sm tracking-wide transition focus:outline-none focus:border-gray-900"
+                      style={{borderColor: '#D1D5DB', color: '#1F1F1F'}}
+                      placeholder="姓"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-normal mb-3 tracking-wide" style={{color: '#1F1F1F'}}>
+                      名 <span style={{color: '#EF4444'}}>*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="firstName"
+                      value={formData.firstName || ''}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-5 py-4 border text-sm tracking-wide transition focus:outline-none focus:border-gray-900"
+                      style={{borderColor: '#D1D5DB', color: '#1F1F1F'}}
+                      placeholder="名"
+                    />
+                  </div>
                 </div>
 
                 <div>
@@ -103,51 +308,31 @@ function BookingDesktop({
 
                 <div>
                   <label className="block text-sm font-normal mb-3 tracking-wide" style={{color: '#1F1F1F'}}>
-                    预约日期 <span style={{color: '#EF4444'}}>*</span>
+                    电话 <span style={{color: '#EF4444'}}>*</span>
                   </label>
-                  <input
-                    type="date"
-                    name="preferred_date"
-                    value={formData.preferred_date}
-                    onChange={handleChange}
-                    required
-                    min={new Date().toISOString().split('T')[0]}
-                    className="w-full px-5 py-4 border text-sm tracking-wide transition focus:outline-none focus:border-gray-900"
-                    style={{borderColor: '#D1D5DB', color: '#1F1F1F'}}
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-normal mb-3 tracking-wide" style={{color: '#1F1F1F'}}>
-                    服务类型 <span style={{color: '#EF4444'}}>*</span>
-                  </label>
-                  <select
-                    name="service_type"
-                    value={formData.service_type}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-5 py-4 border text-sm tracking-wide transition focus:outline-none focus:border-gray-900"
-                    style={{borderColor: '#D1D5DB', color: '#1F1F1F'}}
-                  >
-                    <option value="面部轮廓">面部轮廓</option>
-                    <option value="身体塑形">身体塑形</option>
-                    <option value="注射提升">注射提升</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-normal mb-3 tracking-wide" style={{color: '#1F1F1F'}}>
-                    留言
-                  </label>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows={4}
-                    className="w-full px-5 py-4 border text-sm tracking-wide transition focus:outline-none focus:border-gray-900"
-                    style={{borderColor: '#D1D5DB', color: '#1F1F1F'}}
-                    placeholder="请告诉我们您的需求或问题"
-                  />
+                  <div className="flex gap-3">
+                    <select
+                      value={countryCode}
+                      onChange={handleCountryCodeChange}
+                      className="px-4 py-4 border text-sm tracking-wide transition focus:outline-none focus:border-gray-900"
+                      style={{borderColor: '#D1D5DB', color: '#1F1F1F', minWidth: '150px'}}
+                    >
+                      {countryCodes.map((country) => (
+                        <option key={country.code} value={country.code}>
+                          {country.flag} {country.code}
+                        </option>
+                      ))}
+                    </select>
+                    <input
+                      type="tel"
+                      value={phoneNumber}
+                      onChange={handlePhoneChange}
+                      required
+                      className="flex-1 px-5 py-4 border text-sm tracking-wide transition focus:outline-none focus:border-gray-900"
+                      style={{borderColor: '#D1D5DB', color: '#1F1F1F'}}
+                      placeholder="请输入您的电话号码"
+                    />
+                  </div>
                 </div>
 
                 <div className="pt-8">
