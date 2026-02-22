@@ -599,18 +599,18 @@ function App() {
           </div>
 
           <div className="md:hidden max-w-md mx-auto">
-            <div className="rounded-3xl p-8" style={{backgroundColor: '#B9CBDC'}}>
-              <div className="flex justify-center mb-8">
-                <div className="w-16 h-16 rounded-full flex items-center justify-center bg-white">
-                  <svg className="w-8 h-8" style={{color: '#B9CBDC'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="rounded-3xl p-6" style={{backgroundColor: '#B9CBDC'}}>
+              <div className="flex justify-center mb-4">
+                <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white">
+                  <svg className="w-6 h-6" style={{color: '#B9CBDC'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
               </div>
 
-              <h2 className="text-3xl font-light text-center mb-12 text-white">我们的优势</h2>
+              <h2 className="text-2xl font-light text-center mb-5 text-white">我们的优势</h2>
 
-              <div className="rounded-2xl p-6 space-y-0" style={{backgroundColor: 'rgba(255,255,255,0.2)'}}>
+              <div className="rounded-2xl p-4 space-y-0" style={{backgroundColor: 'rgba(255,255,255,0.2)'}}>
                 {[
                   { num: '1', title: '注重面部整体比例和谐' },
                   { num: '2', title: '专业的面诊评估' },
@@ -619,17 +619,17 @@ function App() {
                   { num: '5', title: '基于美学的个性化方案' }
                 ].map((item, index, array) => (
                   <div key={item.num}>
-                    <div className="flex items-start gap-3 py-2.5">
-                      <div className="w-10 h-10 rounded-full flex items-center justify-center bg-white flex-shrink-0 text-base font-light" style={{color: '#6B7280'}}>
+                    <div className="flex items-start gap-3 py-2">
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center bg-white flex-shrink-0 text-sm font-light" style={{color: '#6B7280'}}>
                         {item.num}
                       </div>
-                      <div className="flex-1 pt-1.5">
-                        <h3 className="text-base font-light text-white">{item.title}</h3>
+                      <div className="flex-1 pt-1">
+                        <h3 className="text-sm font-light text-white">{item.title}</h3>
                       </div>
                     </div>
                     {index < array.length - 1 && (
-                      <div className="flex justify-center py-0.5">
-                        <svg className="w-5 h-5 text-white opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="flex justify-center py-0">
+                        <svg className="w-4 h-4 text-white opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                         </svg>
                       </div>
