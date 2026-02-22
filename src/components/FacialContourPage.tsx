@@ -130,7 +130,7 @@ function FacialContourPage() {
                 </div>
 
                 {/* 颧骨标注 - 右侧 */}
-                <div className="absolute" style={{top: '40%', right: '20%'}}>
+                <div className="absolute" style={{top: '36%', right: '20%'}}>
                   <div className="relative">
                     {/* 点 */}
                     <div className="absolute w-2.5 h-2.5 bg-white border-2 rounded-full" style={{borderColor: '#1C2B3A', right: '-5px', top: '-5px'}}></div>
@@ -152,7 +152,7 @@ function FacialContourPage() {
                   </div>
                 </div>
 
-                {/* 下颌线标注 - 左侧 */}
+                {/* 下巴标注 - 左侧 */}
                 <div className="absolute" style={{top: '56%', left: '25%'}}>
                   <div className="relative">
                     {/* 点 */}
@@ -170,12 +170,12 @@ function FacialContourPage() {
                         animation: 'floatUpDown 3s ease-in-out infinite 1s'
                       }}
                     >
-                      <p className="text-sm font-light whitespace-nowrap" style={{color: '#1F1F1F'}}>下颌线</p>
+                      <p className="text-sm font-light whitespace-nowrap" style={{color: '#1F1F1F'}}>下巴</p>
                     </div>
                   </div>
                 </div>
 
-                {/* 下巴标注 - 右侧 */}
+                {/* 下颌线标注 - 右侧 */}
                 <div className="absolute" style={{top: '50%', right: '35%'}}>
                   <div className="relative">
                     {/* 点 */}
@@ -193,7 +193,7 @@ function FacialContourPage() {
                         animation: 'floatUpDown 3s ease-in-out infinite 1.5s'
                       }}
                     >
-                      <p className="text-sm font-light whitespace-nowrap" style={{color: '#1F1F1F'}}>下巴</p>
+                      <p className="text-sm font-light whitespace-nowrap" style={{color: '#1F1F1F'}}>下颌线</p>
                     </div>
                   </div>
                 </div>
