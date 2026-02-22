@@ -995,6 +995,14 @@ function App() {
         </div>
       </section>
 
+      <section className="w-full">
+        <img
+          src="/56315efc544d966bb744e9a52c7de1f4.png"
+          alt="Professional portrait"
+          className="w-full h-auto object-cover"
+        />
+      </section>
+
       <section className="py-12 md:py-24 px-4 md:px-8" style={{backgroundColor: '#F3F4F6'}}>
         <div className="max-w-7xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-light text-center mb-3 tracking-wide" style={{color: '#1F1F1F'}}>
