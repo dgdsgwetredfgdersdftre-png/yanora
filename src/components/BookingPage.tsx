@@ -51,11 +51,12 @@ function BookingPage() {
         email: formData.email,
         phone: formData.phone,
         preferred_date: formData.preferred_date || null,
+        preferred_time: null,
         service_type: formData.service_type,
         message: formData.message,
         user_id: user?.id || null,
         status: 'pending',
-        payment_status: 'unpaid',
+        payment_status: 'pending',
         consultation_fee: 500
       };
 
