@@ -33,6 +33,26 @@ function BodySculptingPage() {
             科学塑形方案，打造理想身材曲线
           </p>
 
+          <div className="bg-white py-12 mb-16">
+            <div className="flex items-end justify-center gap-0">
+              <img
+                src="/Gemini_Generated_Image_94iwds94iwds94iw.png"
+                alt="身体塑形示例1"
+                className="h-[400px] object-contain"
+              />
+              <img
+                src="/Gemini_Generated_Image_iubeodiubeodiube.png"
+                alt="身体塑形示例2"
+                className="h-[400px] object-contain"
+              />
+              <img
+                src="/Gemini_Generated_Image_u1lac1u1lac1u1la.png"
+                alt="身体塑形示例3"
+                className="h-[400px] object-contain"
+              />
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
             <div className="space-y-6">
               <h2 className="text-2xl font-light" style={{color: '#1F1F1F'}}>服务项目</h2>
