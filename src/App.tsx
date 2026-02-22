@@ -1001,7 +1001,7 @@ function App() {
             src="/Gemini_Generated_Image_scqqizscqqizscqq_(1).png"
             alt="Aesthetic Transformation"
             className="h-full w-auto object-contain"
-            style={{ transform: 'scale(0.25)' }}
+            style={{ transform: 'scale(2.5)' }}
           />
         </div>
       </section>
