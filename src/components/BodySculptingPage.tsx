@@ -1,8 +1,15 @@
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
+import { useState } from 'react';
 
 function BodySculptingPage() {
   const navigate = useNavigate();
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const images = [
+    '/Gemini_Generated_Image_94iwds94iwds94iw.png',
+    '/Gemini_Generated_Image_iubeodiubeodiube.png',
+    '/Gemini_Generated_Image_u1lac1u1lac1u1la.png'
+  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -34,7 +41,8 @@ function BodySculptingPage() {
           </p>
 
           <div className="bg-white py-12 mb-16">
-            <div className="flex items-end justify-center gap-0">
+            {/* Desktop view - 3 images side by side */}
+            <div className="hidden md:flex items-end justify-center gap-0">
               <img
                 src="/Gemini_Generated_Image_94iwds94iwds94iw.png"
                 alt="身体塑形示例1"
@@ -62,6 +70,68 @@ function BodySculptingPage() {
                   mixBlendMode: 'darken'
                 }}
               />
+            </div>
+
+            {/* Mobile view - swipeable carousel */}
+            <div className="md:hidden">
+              <div className="relative overflow-hidden">
+                <div
+                  className="flex transition-transform duration-300 ease-out"
+                  style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                  onTouchStart={(e) => {
+                    const touch = e.touches[0];
+                    const startX = touch.clientX;
+
+                    const handleTouchMove = (moveEvent: TouchEvent) => {
+                      const currentX = moveEvent.touches[0].clientX;
+                      const diff = startX - currentX;
+
+                      if (Math.abs(diff) > 50) {
+                        if (diff > 0 && currentSlide < images.length - 1) {
+                          setCurrentSlide(currentSlide + 1);
+                        } else if (diff < 0 && currentSlide > 0) {
+                          setCurrentSlide(currentSlide - 1);
+                        }
+                        document.removeEventListener('touchmove', handleTouchMove);
+                      }
+                    };
+
+                    document.addEventListener('touchmove', handleTouchMove);
+                    document.addEventListener('touchend', () => {
+                      document.removeEventListener('touchmove', handleTouchMove);
+                    }, { once: true });
+                  }}
+                >
+                  {images.map((src, index) => (
+                    <div key={index} className="w-full flex-shrink-0 flex justify-center items-end">
+                      <img
+                        src={src}
+                        alt={`身体塑形示例${index + 1}`}
+                        className="h-[500px] object-contain"
+                        style={{
+                          filter: 'brightness(1.1) contrast(1.05)',
+                          mixBlendMode: 'darken'
+                        }}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Dots indicator */}
+              <div className="flex justify-center gap-2 mt-6">
+                {images.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className="w-2 h-2 rounded-full transition-all duration-300"
+                    style={{
+                      backgroundColor: currentSlide === index ? '#1F1F1F' : '#D1D5DB'
+                    }}
+                    aria-label={`切换到图片 ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
 
