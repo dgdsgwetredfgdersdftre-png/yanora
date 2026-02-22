@@ -1,14 +1,18 @@
 import { useState, useRef, useEffect } from 'react';
 
 interface ImageCompareSliderProps {
+  beforeImage?: string;
+  afterImage?: string;
   beforeLabel?: string;
   afterLabel?: string;
   initialPosition?: number;
 }
 
 export default function ImageCompareSlider({
-  beforeLabel = '【此处放置案例照片 A】',
-  afterLabel = '【此处放置案例照片 B】',
+  beforeImage,
+  afterImage,
+  beforeLabel = '术前',
+  afterLabel = '术后',
   initialPosition = 50
 }: ImageCompareSliderProps) {
   const [sliderPosition, setSliderPosition] = useState(initialPosition);
@@ -68,22 +72,47 @@ export default function ImageCompareSlider({
       onMouseDown={handleMouseDown}
       onTouchStart={handleMouseDown}
     >
-      <div
-        className="absolute inset-0 flex items-center justify-center border"
-        style={{ backgroundColor: '#B9CBDC', borderColor: '#A0A7B5' }}
-      >
-        <span className="text-gray-500 text-sm">{afterLabel}</span>
+      <div className="absolute inset-0 flex items-center justify-center">
+        {afterImage ? (
+          <img
+            src={afterImage}
+            alt={afterLabel}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <div
+            className="w-full h-full flex items-center justify-center border"
+            style={{ backgroundColor: '#B9CBDC', borderColor: '#A0A7B5' }}
+          >
+            <span className="text-gray-500 text-sm">{afterLabel}</span>
+          </div>
+        )}
       </div>
 
       <div
-        className="absolute inset-0 flex items-center justify-center border overflow-hidden"
+        className="absolute inset-0 flex items-center justify-center overflow-hidden"
         style={{
-          backgroundColor: '#D4A574',
-          borderColor: '#A0A7B5',
           clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`
         }}
       >
-        <span className="text-gray-500 text-sm">{beforeLabel}</span>
+        {beforeImage ? (
+          <img
+            src={beforeImage}
+            alt={beforeLabel}
+            className="w-full h-full object-cover"
+            style={{ width: '100vw', maxWidth: 'none', position: 'absolute', left: 0 }}
+          />
+        ) : (
+          <div
+            className="w-full h-full flex items-center justify-center border"
+            style={{
+              backgroundColor: '#D4A574',
+              borderColor: '#A0A7B5'
+            }}
+          >
+            <span className="text-gray-500 text-sm">{beforeLabel}</span>
+          </div>
+        )}
       </div>
 
       <div

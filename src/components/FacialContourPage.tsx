@@ -3,6 +3,7 @@ import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import ImageCompareSlider from './ImageCompareSlider';
 
 function FacialContourPage() {
   const navigate = useNavigate();
@@ -371,7 +372,7 @@ function FacialContourPage() {
       </section>
 
       {/* Case Studies Section */}
-      <section className="py-20 md:py-28 px-6 md:px-12">
+      <section className="py-20 md:py-28 px-12 md:px-24">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16 text-center">
             <h2 className="text-2xl md:text-3xl font-light mb-4 tracking-wide" style={{color: '#1F1F1F'}}>
@@ -400,25 +401,8 @@ function FacialContourPage() {
                   </div>
 
                   <div className={index % 2 === 0 ? 'order-2' : 'order-2 lg:order-1'}>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <p className="text-xs mb-3 tracking-wider" style={{color: '#6B7280'}}>术前</p>
-                        <div
-                          className="aspect-[3/4] flex items-center justify-center text-6xl"
-                          style={{backgroundColor: '#F9FAFB'}}
-                        >
-                          {caseItem.before}
-                        </div>
-                      </div>
-                      <div>
-                        <p className="text-xs mb-3 tracking-wider" style={{color: '#6B7280'}}>术后</p>
-                        <div
-                          className="aspect-[3/4] flex items-center justify-center text-6xl"
-                          style={{backgroundColor: '#F9FAFB'}}
-                        >
-                          {caseItem.after}
-                        </div>
-                      </div>
+                    <div className="aspect-[3/4]">
+                      <ImageCompareSlider />
                     </div>
                   </div>
                 </div>
