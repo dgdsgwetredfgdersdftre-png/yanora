@@ -536,37 +536,41 @@ function App() {
         </div>
       </section>
 
-      <section className="py-8 md:py-12 px-4 md:px-12">
-        <div className="w-full md:w-4/5 mx-auto">
-          <div className="p-3 md:p-8 flex flex-col md:flex-row gap-4 md:gap-8 rounded-3xl" style={{minHeight: '450px', border: '8px solid #B9CBDC'}}>
-            <div className="md:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-              <div className="aspect-[3/3]">
-                <ImageCompareSlider
-                  beforeLabel="【此处放置案例照片 A】"
-                  afterLabel="【此处放置案例照片 B】"
-                  initialPosition={50}
-                />
-              </div>
-              <div className="aspect-[3/3]">
-                <ImageCompareSlider
-                  beforeLabel="【此处放置案例照片 A】"
-                  afterLabel="【此处放置案例照片 B】"
-                  initialPosition={50}
-                />
-              </div>
-            </div>
-
-            <div className="md:w-1/4 space-y-8 md:space-y-12">
-              <div className="group cursor-pointer">
-                <h3 className="text-xl font-normal transition" style={{color: '#1F1F1F'}}>面部轮廓</h3>
-              </div>
-              <div className="group cursor-pointer">
-                <h3 className="text-xl font-normal transition" style={{color: '#1F1F1F'}}>身体塑形</h3>
-              </div>
-              <div className="group cursor-pointer">
-                <h3 className="text-xl font-normal transition" style={{color: '#1F1F1F'}}>注射提升</h3>
-              </div>
-            </div>
+      <section className="md:hidden py-8 px-4">
+        <div className="max-w-md mx-auto">
+          <div className="grid grid-cols-2 gap-3">
+            {[
+              { title: '面部轮廓', route: '/facial-contour' },
+              { title: '身体塑形', route: '/body-sculpting' },
+              { title: '注射提升', route: '/injection-lifting' },
+              { title: '植发', route: '/hair-transplant' }
+            ].map((service) => (
+              <button
+                key={service.title}
+                onClick={() => navigate(service.route)}
+                className="relative aspect-square rounded-2xl p-4 flex items-center justify-center transition-all duration-300 active:scale-105"
+                style={{
+                  backgroundColor: '#F9FAFB',
+                  border: '2px solid transparent'
+                }}
+                onTouchStart={(e) => {
+                  e.currentTarget.style.transform = 'scale(1.05)';
+                  e.currentTarget.style.borderColor = '#B9CBDC';
+                  e.currentTarget.style.backgroundColor = '#FFFFFF';
+                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(185, 203, 220, 0.3)';
+                }}
+                onTouchEnd={(e) => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.borderColor = 'transparent';
+                  e.currentTarget.style.backgroundColor = '#F9FAFB';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
+              >
+                <h3 className="text-base font-normal text-center" style={{color: '#1F1F1F'}}>
+                  {service.title}
+                </h3>
+              </button>
+            ))}
           </div>
         </div>
       </section>
