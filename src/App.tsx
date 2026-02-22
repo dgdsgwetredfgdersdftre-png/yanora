@@ -1015,7 +1015,8 @@ function App() {
           </div>
         </div>
 
-        <div className="w-full relative">
+        {/* Desktop Layout - Keep Original */}
+        <div className="hidden md:block w-full relative">
           <img
             src="/56315efc544d966bb744e9a52c7de1f4.png"
             alt="Professional portrait"
@@ -1044,6 +1045,49 @@ function App() {
                 alt="Analysis 4"
                 className="absolute right-12 bottom-[15%] w-48 md:w-64 h-auto rounded-lg shadow-2xl float-right-2"
               />
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Layout - New Design */}
+        <div className="md:hidden w-full">
+          <div className="px-4">
+            <img
+              src="/56315efc544d966bb744e9a52c7de1f4.png"
+              alt="Professional portrait"
+              className="w-full h-auto object-cover rounded-lg mb-6"
+            />
+
+            <div className="space-y-4 mb-8">
+              {[
+                {
+                  image: '/Gemini_Generated_Image_lv6nndlv6nndlv6n.png',
+                  title: '1. 轮廓与骨相维度'
+                },
+                {
+                  image: '/Gemini_Generated_Image_pf7kappf7kappf7k.png',
+                  title: '2. 软组织与皮相维度'
+                },
+                {
+                  image: '/Gemini_Generated_Image_a16ssqa16ssqa16s.png',
+                  title: '3. 五官局部维度'
+                },
+                {
+                  image: '/Gemini_Generated_Image_fv9uk0fv9uk0fv9u.png',
+                  title: '4. 动态与肌肉维度'
+                }
+              ].map((item, index) => (
+                <div key={index} className="flex gap-4 items-center bg-white p-3 rounded-lg shadow-sm">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-24 h-24 object-cover rounded-lg flex-shrink-0"
+                  />
+                  <h3 className="text-sm font-medium flex-1" style={{color: '#1F2937'}}>
+                    {item.title}
+                  </h3>
+                </div>
+              ))}
             </div>
           </div>
         </div>
