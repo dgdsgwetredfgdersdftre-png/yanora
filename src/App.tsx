@@ -536,10 +536,11 @@ function App() {
         </div>
       </section>
 
-      <section className="py-8 md:py-12 px-4 md:px-12">
-        <div className="w-full md:w-4/5 mx-auto">
-          <div className="p-3 md:p-8 flex flex-col md:flex-row gap-4 md:gap-8 rounded-3xl" style={{minHeight: '450px', border: '8px solid #B9CBDC'}}>
-            <div className="md:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+      {/* 桌面端服务展示 */}
+      <section className="hidden md:block py-12 px-12">
+        <div className="w-4/5 mx-auto">
+          <div className="p-8 flex flex-row gap-8 rounded-3xl" style={{minHeight: '450px', border: '8px solid #B9CBDC'}}>
+            <div className="w-3/4 grid grid-cols-2 gap-6">
               <div className="aspect-[3/3]">
                 <ImageCompareSlider
                   beforeLabel="【此处放置案例照片 A】"
@@ -556,7 +557,7 @@ function App() {
               </div>
             </div>
 
-            <div className="md:w-1/4 space-y-8 md:space-y-12">
+            <div className="w-1/4 space-y-12">
               <div className="group cursor-pointer">
                 <h3 className="text-xl font-normal transition" style={{color: '#1F1F1F'}}>面部轮廓</h3>
               </div>
@@ -565,6 +566,35 @@ function App() {
               </div>
               <div className="group cursor-pointer">
                 <h3 className="text-xl font-normal transition" style={{color: '#1F1F1F'}}>注射提升</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 移动端服务展示 */}
+      <section className="md:hidden py-8 px-4">
+        <div className="w-full">
+          <div className="p-3 flex flex-col gap-4 rounded-3xl" style={{border: '4px solid #B9CBDC'}}>
+            <div className="grid grid-cols-1 gap-4">
+              <div className="aspect-[3/3]">
+                <ImageCompareSlider
+                  beforeLabel="【此处放置案例照片 A】"
+                  afterLabel="【此处放置案例照片 B】"
+                  initialPosition={50}
+                />
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <div className="group cursor-pointer">
+                <h3 className="text-lg font-normal transition" style={{color: '#1F1F1F'}}>面部轮廓</h3>
+              </div>
+              <div className="group cursor-pointer">
+                <h3 className="text-lg font-normal transition" style={{color: '#1F1F1F'}}>身体塑形</h3>
+              </div>
+              <div className="group cursor-pointer">
+                <h3 className="text-lg font-normal transition" style={{color: '#1F1F1F'}}>注射提升</h3>
               </div>
             </div>
           </div>
